@@ -1,0 +1,355 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.aboutHero {
+  background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
+  padding: 170px 5% 100px 5%;
+  text-align: center;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 54px);
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   Team Profiles Section
+   ========================================================================== */
+.teamSection {
+  padding: 120px 5%;
+  background: var(--primary-darker);
+}
+
+.teamIntro {
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  text-align: center;
+}
+
+.introTitle {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.introText {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.teamGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.profileCard {
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.profileCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.profileImageWrapper {
+  position: relative;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(212, 157, 106, 0.05) 0%, rgba(80, 97, 124, 0.08) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Silhouetted Vector/Avatar representation inside profile box since photos are custom */
+.avatarPlaceholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-dark);
+  font-size: 48px;
+  color: var(--accent-gold);
+  transition: var(--transition-smooth);
+}
+
+.profileCard:hover .avatarPlaceholder {
+  border-color: var(--accent-gold);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(212, 157, 106, 0.2);
+}
+
+.profileContent {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.memberName {
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: 700;
+  color: #3b82f6; /* Medium blue as displayed in image */
+  margin-bottom: 6px;
+}
+
+.memberRole {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.credentialsTitle {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.credentialsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.credentialItem {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 20px;
+}
+
+.credentialItem::before {
+  content: "♦";
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   Mission, Vision & Aim Section
+   ========================================================================== */
+.mvaSection {
+  padding: 120px 5%;
+  background: var(--primary-dark);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.mvaGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.mvaCard {
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  padding: 50px 40px;
+  border-radius: 8px;
+  text-align: center;
+  transition: var(--transition-smooth);
+  box-shadow: var(--soft-shadow);
+}
+
+.mvaCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.mvaIconBox {
+  width: 70px;
+  height: 70px;
+  background: rgba(212, 157, 106, 0.1);
+  border: 1px solid var(--accent-gold-glow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px auto;
+  transition: var(--transition-smooth);
+}
+
+.mvaCard:hover .mvaIconBox {
+  background: var(--accent-gold);
+  color: var(--primary-darker);
+}
+
+.mvaIconSvg {
+  width: 32px;
+  height: 32px;
+  fill: var(--accent-gold);
+  transition: var(--transition-smooth);
+}
+
+.mvaCard:hover .mvaIconSvg {
+  fill: var(--primary-darker);
+}
+
+.mvaTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.mvaText {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Affiliations Section
+   ========================================================================== */
+.affiliationsSection {
+  padding: 120px 5%;
+  background: var(--primary-darker);
+}
+
+.affiliationsGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.affiliationCard {
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+  box-shadow: var(--soft-shadow);
+  min-height: 250px;
+}
+
+.affiliationCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.badgeCircle {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 15px rgba(14, 23, 38, 0.06);
+  transition: var(--transition-smooth);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.affiliationCard:hover .badgeCircle {
+  transform: rotate(360deg);
+}
+
+.badgeText {
+  font-size: 24px;
+}
+
+.ibbiText {
+  color: #ff5722;
+}
+
+.iovText {
+  color: #3f51b5;
+}
+
+.itText {
+  color: #4caf50;
+}
+
+.ieText {
+  color: #03a9f4;
+}
+
+.affiliationLabel {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .mvaGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .affiliationsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .affiliationsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,511 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.servicesHero {
+  background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
+  padding: 180px 5% 100px 5%;
+  text-align: center;
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5.5vw, 60px);
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* ==========================================================================
+   Staggered Wave Grid
+   ========================================================================== */
+.servicesSection {
+  padding: 140px 5%;
+  background: var(--primary-darker);
+}
+
+.gridIntro {
+  max-width: 850px;
+  margin: 0 auto 90px auto;
+  text-align: center;
+}
+
+.introText {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* 3-column grid with alternating staggers */
+.servicesGrid {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.serviceCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  padding: 45px 35px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: var(--transition-smooth);
+  box-shadow: var(--soft-shadow);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Stagger alternate cards vertically for organic "waves" */
+.servicesGrid > div:nth-child(3n + 2) {
+  transform: translateY(40px);
+}
+
+.servicesGrid > div:nth-child(3n + 3) {
+  transform: translateY(20px);
+}
+
+.serviceCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 157, 106, 0.05) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.serviceCard:hover {
+  border-color: var(--accent-gold-light);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Reinforce stagger styling inside hover state to prevent layout jumping */
+.servicesGrid > div:nth-child(3n + 2):hover {
+  transform: translateY(30px) scale(1.02);
+}
+
+.servicesGrid > div:nth-child(3n + 3):hover {
+  transform: translateY(10px) scale(1.02);
+}
+
+/* Large numbers floating inside card */
+.cardIndex {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-family: var(--font-sans);
+  font-size: 110px;
+  font-weight: 800;
+  color: rgba(212, 157, 106, 0.025);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: var(--transition-smooth);
+}
+
+.serviceCard:hover .cardIndex {
+  color: rgba(212, 157, 106, 0.06);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.cardTop {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardIcon {
+  width: 55px;
+  height: 55px;
+  background: rgba(212, 157, 106, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: var(--accent-gold);
+  transition: var(--transition-smooth);
+}
+
+.serviceCard:hover .cardIcon {
+  background: var(--accent-gold);
+  color: var(--primary-darker);
+  transform: scale(1.05);
+}
+
+.cardIconSvg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.serviceTitle {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.serviceDescription {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.cardAction {
+  margin-top: 30px;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+}
+
+.serviceCard:hover .cardAction {
+  color: var(--text-primary);
+}
+
+.actionChevron {
+  transition: var(--transition-fast);
+}
+
+.serviceCard:hover .actionChevron {
+  transform: translateX(5px);
+}
+
+/* ==========================================================================
+   Estimation HUD Control Portal
+   ========================================================================== */
+.estimatorSection {
+  padding: 160px 5%;
+  background: var(--primary-dark);
+  border-top: 1px solid var(--glass-border);
+}
+
+.estimatorContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  padding: 80px 60px;
+  border-radius: 24px;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+}
+
+.estimatorContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: radial-gradient(circle at 10% 20%, rgba(212, 157, 106, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.estimatorTitle {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.estimatorSubtitle {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.estimatorGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+}
+
+.calculatorForm {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.calcLabel {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.selectInput,
+.numberInput {
+  background: var(--primary-dark);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 18px;
+  font-size: 14.5px;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  transition: var(--transition-smooth);
+}
+
+.selectInput:focus,
+.numberInput:focus {
+  border-color: var(--accent-gold);
+  background: var(--primary-surface);
+  box-shadow: 0 0 15px rgba(184, 134, 11, 0.1);
+}
+
+.resultsPanel {
+  background: var(--primary-dark);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--soft-shadow);
+}
+
+.resultTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 15px;
+}
+
+.resultItem {
+  margin-bottom: 35px;
+}
+
+.resultLabel {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.resultVal {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.resultList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.resultListItem {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resultCheck {
+  color: var(--cta-peach);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ==========================================================================
+   Slide Drawer details
+   ========================================================================== */
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 23, 38, 0.6);
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.drawerOverlayActive {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -600px;
+  width: 550px;
+  max-width: 100%;
+  height: 100%;
+  background: var(--primary-surface);
+  border-left: 1px solid var(--glass-border);
+  z-index: 1200;
+  box-shadow: -10px 0 40px rgba(14, 23, 38, 0.08);
+  padding: 80px 50px;
+  overflow-y: auto;
+  transition: var(--transition-smooth);
+}
+
+.drawerActive {
+  right: 0;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--accent-gold);
+}
+
+.drawerTitle {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.drawerDesc {
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 50px;
+}
+
+.scopeTitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 24px;
+}
+
+.scopeList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scopeItem {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  color: var(--text-primary);
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.6;
+}
+
+.scopeItem::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+}
+
+@media (max-width: 991px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .servicesGrid > div:nth-child(3n + 2),
+  .servicesGrid > div:nth-child(3n + 3) {
+    transform: translateY(0);
+  }
+  
+  .servicesGrid > div:nth-child(2n + 2) {
+    transform: translateY(30px);
+  }
+  
+  .estimatorContainer {
+    padding: 50px 30px;
+  }
+  
+  .estimatorGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .servicesGrid > div:nth-child(2n + 2) {
+    transform: translateY(0);
+  }
+  
+  .drawer {
+    width: 100%;
+  }
+}
