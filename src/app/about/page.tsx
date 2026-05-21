@@ -113,7 +113,7 @@ export default function About() {
         <div className={styles.affiliationsGrid}>
           <div className={`${styles.affiliationCard} scroll-reveal`}>
             <div className={styles.badgeCircle}>
-              <img src="/images/Trusted Affiliations/office bearers of iov.png" alt="Office bearers of IOV" className={styles.affiliationLogo} />
+              <img src="/images/Trusted Affiliations/office bearers of iov.png" alt="Office bearers of IOV" className={`${styles.affiliationLogo} ${styles.iovOfficeBearersLogo}`} />
             </div>
             <span className={styles.affiliationLabel}>Office Bearers of IOV & Insolvency Valuers</span>
           </div>
