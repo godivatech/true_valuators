@@ -79,7 +79,18 @@ export default function Footer() {
 
       <div className={styles.copyrightRow}>
         <span className={styles.copyrightText}>
-          &copy; {new Date().getFullYear()} True Valuators. All rights reserved. Designed to premium standards.
+          &copy; {new Date().getFullYear()} True Valuators. All rights reserved.
+        </span>
+        <span className={styles.creditText}>
+          Designed &amp; Developed by{" "}
+          <a 
+            href="https://godivatech.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.creditLink}
+          >
+            Godivatech
+          </a>
         </span>
         <button 
           onClick={scrollToTop} 
