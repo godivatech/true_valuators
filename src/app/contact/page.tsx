@@ -80,14 +80,17 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Premium simulated map/blueprint locator graphic */}
+            {/* Premium Google Maps Iframe Embed */}
             <div className={styles.mapPlaceholder}>
-              <svg className={styles.mapSvg} viewBox="0 0 100 100">
-                <path d="M10 20 L90 20 M10 40 L90 40 M10 60 L90 60 M10 80 L90 80 M20 10 L20 90 M40 10 L40 90 M60 10 L60 90 M80 10 L80 90" stroke="currentColor" strokeWidth="0.5" />
-              </svg>
-              <div className={styles.mapMarker}>
-                📍 West Mambalam, Chennai
-              </div>
+              <iframe
+                src="https://maps.google.com/maps?q=Easwaran%20Koil%20Street,%20Vellai%20Thottam,%20West%20Mambalam,%20Chennai,%20Tamil%20Nadu%20600033&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                title="True Valuators Chennai Office Location Map"
+              ></iframe>
             </div>
           </div>
 
@@ -115,14 +118,17 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Premium simulated map/blueprint locator graphic */}
+            {/* Premium Google Maps Iframe Embed */}
             <div className={styles.mapPlaceholder}>
-              <svg className={styles.mapSvg} viewBox="0 0 100 100">
-                <path d="M15 15 L85 85 M15 85 L85 15 M50 0 L50 100 M0 50 L100 50" stroke="currentColor" strokeWidth="0.5" />
-              </svg>
-              <div className={styles.mapMarker}>
-                📍 Narimedu, Madurai
-              </div>
+              <iframe
+                src="https://maps.google.com/maps?q=No.5,%20North%20Street,%20Singarayar%20Colony,%20Narimedu,%20Madurai%20-%20625002&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                title="True Valuators Madurai Office Location Map"
+              ></iframe>
             </div>
           </div>
         </div>

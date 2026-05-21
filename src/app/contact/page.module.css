@@ -196,35 +196,18 @@
 
 /* Styled map blueprint container */
 .mapPlaceholder {
-  height: 200px;
+  height: 280px;
   background: var(--primary-darker);
   border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-smooth);
 }
 
-.mapSvg {
-  width: 100%;
-  height: 100%;
-  opacity: 0.15;
-  fill: var(--accent-gold);
-}
-
-.mapMarker {
-  position: absolute;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent-gold);
-  background: var(--primary-surface);
-  border: 1px solid var(--accent-gold);
-  padding: 8px 16px;
-  border-radius: 20px;
-  box-shadow: var(--soft-shadow);
+.officeCard:hover .mapPlaceholder {
+  border-color: var(--accent-gold);
 }
 
 /* ==========================================================================
