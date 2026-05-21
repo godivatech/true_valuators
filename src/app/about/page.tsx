@@ -112,30 +112,22 @@ export default function About() {
 
         <div className={styles.affiliationsGrid}>
           <div className={`${styles.affiliationCard} scroll-reveal`}>
-            <div className={styles.badgeCircle}>
-              <img src="/images/Trusted Affiliations/office bearers of iov.png" alt="Office bearers of IOV" className={`${styles.affiliationLogo} ${styles.iovOfficeBearersLogo}`} />
-            </div>
+            <img src="/images/Trusted Affiliations/office bearers of iov.png" alt="Office bearers of IOV" className={`${styles.affiliationLogo} ${styles.iovOfficeBearersLogo}`} />
             <span className={styles.affiliationLabel}>Office Bearers of IOV & Insolvency Valuers</span>
           </div>
 
           <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "150ms" }}>
-            <div className={styles.badgeCircle}>
-              <img src="/images/Trusted Affiliations/instution of valuers.png" alt="Institution of Valuers" className={styles.affiliationLogo} />
-            </div>
+            <img src="/images/Trusted Affiliations/instution of valuers.png" alt="Institution of Valuers" className={styles.affiliationLogo} />
             <span className={styles.affiliationLabel}>Institution of Valuers Registered Panel</span>
           </div>
 
           <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "300ms" }}>
-            <div className={styles.badgeCircle}>
-              <img src="/images/Trusted Affiliations/It registered valuer.png" alt="Income Tax Valuer" className={styles.affiliationLogo} />
-            </div>
+            <img src="/images/Trusted Affiliations/It registered valuer.png" alt="Income Tax Valuer" className={styles.affiliationLogo} />
             <span className={styles.affiliationLabel}>Income Tax & Wealth Tax Registered Valuer</span>
           </div>
 
           <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "450ms" }}>
-            <div className={styles.badgeCircle}>
-              <img src="/images/Trusted Affiliations/the instiution of valuers.png" alt="The Institution of Valuers Seal" className={styles.affiliationLogo} />
-            </div>
+            <img src="/images/Trusted Affiliations/the instiution of valuers.png" alt="The Institution of Valuers Seal" className={styles.affiliationLogo} />
             <span className={styles.affiliationLabel}>The Institution of Valuers Official Seal</span>
           </div>
         </div>
