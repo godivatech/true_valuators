@@ -104,188 +104,337 @@
 }
 
 /* ==========================================================================
-   Staggered Wave Grid
+   Split-Screen Interactive Workspace
    ========================================================================== */
-.servicesSection {
-  padding: 140px 5%;
+.workspaceSection {
+  padding: 120px 5%;
   background: var(--primary-darker);
 }
 
 .gridIntro {
   max-width: 850px;
-  margin: 0 auto 90px auto;
+  margin: 0 auto 70px auto;
   text-align: center;
 }
 
 .introText {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 1.8;
   color: var(--text-muted);
 }
 
-/* 3-column grid with alternating staggers */
-.servicesGrid {
+.workspaceContainer {
   max-width: 1250px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
 }
 
-.serviceCard {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
+/* Sidebar Columns (42% Width) */
+.sidebarColumn {
+  flex: 0 0 42%;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--glass-border);
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.sidebarTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.sidebarCount {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--accent-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebarList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebarItem {
+  background: var(--primary-surface);
   border: 1px solid var(--glass-border);
-  padding: 45px 35px;
+  padding: 24px 28px;
   border-radius: 16px;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 280px;
+  align-items: center;
+  gap: 20px;
   transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+}
+
+.sidebarItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: var(--accent-gold);
+  transition: var(--transition-fast);
+}
+
+.sidebarItemActive {
+  border-color: var(--accent-gold);
+  background: var(--primary-surface);
+  box-shadow: var(--hover-shadow);
+  transform: translateX(8px);
+}
+
+.sidebarItemActive::before {
+  width: 4px;
+}
+
+.sidebarIndex {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.6;
+  transition: var(--transition-fast);
+}
+
+.sidebarItemActive .sidebarIndex {
+  color: var(--accent-gold);
+  opacity: 1;
+}
+
+.sidebarTextWrap {
+  flex: 1;
+}
+
+.sidebarItemTitle {
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+  transition: var(--transition-fast);
+}
+
+.sidebarItemActive .sidebarItemTitle {
+  color: var(--accent-gold);
+}
+
+.sidebarItemSnippet {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.sidebarArrow {
+  color: var(--text-muted);
+  font-size: 14px;
+  opacity: 0.4;
+  transition: var(--transition-fast);
+}
+
+.sidebarItemActive .sidebarArrow {
+  color: var(--accent-gold);
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.sidebarItem:hover:not(.sidebarItemActive) {
+  border-color: var(--accent-gold-light);
+  transform: translateX(4px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Panoramic Sticky Console (58% Width) */
+.consoleColumn {
+  flex: 1;
+  position: sticky;
+  top: 130px;
+  align-self: flex-start;
+}
+
+.stickyConsole {
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 50px;
   box-shadow: var(--soft-shadow);
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d;
+  transition: var(--transition-smooth);
 }
 
-/* Stagger alternate cards vertically for organic "waves" */
-.servicesGrid > div:nth-child(3n + 2) {
-  transform: translateY(40px);
-}
-
-.servicesGrid > div:nth-child(3n + 3) {
-  transform: translateY(20px);
-}
-
-.serviceCard::before {
+.stickyConsole::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(212, 157, 106, 0.05) 0%, transparent 100%);
+  background: radial-gradient(circle at 90% 10%, rgba(184, 134, 11, 0.03) 0%, transparent 60%);
   pointer-events: none;
-  z-index: 1;
 }
 
-.serviceCard:hover {
-  border-color: var(--accent-gold-light);
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: var(--hover-shadow);
-}
-
-/* Reinforce stagger styling inside hover state to prevent layout jumping */
-.servicesGrid > div:nth-child(3n + 2):hover {
-  transform: translateY(30px) scale(1.02);
-}
-
-.servicesGrid > div:nth-child(3n + 3):hover {
-  transform: translateY(10px) scale(1.02);
-}
-
-/* Large numbers floating inside card */
-.cardIndex {
-  position: absolute;
-  top: -20px;
-  right: -10px;
-  font-family: var(--font-sans);
-  font-size: 110px;
-  font-weight: 800;
-  color: rgba(212, 157, 106, 0.025);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  transition: var(--transition-smooth);
-}
-
-.serviceCard:hover .cardIndex {
-  color: rgba(212, 157, 106, 0.06);
-  transform: scale(1.1) rotate(5deg);
-}
-
-.cardTop {
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.cardIcon {
-  width: 55px;
-  height: 55px;
-  background: rgba(212, 157, 106, 0.1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.consoleHeader {
   margin-bottom: 30px;
-  color: var(--accent-gold);
-  transition: var(--transition-smooth);
 }
 
-.serviceCard:hover .cardIcon {
-  background: var(--accent-gold);
-  color: var(--primary-darker);
-  transform: scale(1.05);
-}
-
-.cardIconSvg {
-  width: 26px;
-  height: 26px;
-  fill: currentColor;
-}
-
-.serviceTitle {
-  font-family: var(--font-serif);
-  font-size: 21px;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.4;
-  margin-bottom: 16px;
-}
-
-.serviceDescription {
+.consoleLabel {
   font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-.cardAction {
-  margin-top: 30px;
-  z-index: 2;
-  font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--accent-gold);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.consoleTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 32px);
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.consoleDivider {
+  width: 70px;
+  height: 2px;
+  background: var(--accent-gold);
+}
+
+.consoleBody {
+  margin-bottom: 40px;
+}
+
+.consoleDesc {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 35px;
+}
+
+.auditScopeBlock {
+  background: var(--primary-darker);
+  border-radius: 16px;
+  padding: 35px;
+  border: 1px solid var(--glass-border);
+}
+
+.scopeHeaderTitle {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.scopeGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.scopeGridItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.scopeGridBadge {
+  color: var(--accent-gold);
+  font-size: 14px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.scopeGridText {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--text-charcoal);
+  line-height: 1.55;
+}
+
+.consoleFooter {
+  border-top: 1px solid var(--glass-border);
+  padding-top: 30px;
+}
+
+.regulatorySeal {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.sealIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(184, 134, 11, 0.1);
   display: flex;
   align-items: center;
-  gap: 8px;
-  transition: var(--transition-fast);
+  justify-content: center;
+  color: var(--accent-gold);
+  flex-shrink: 0;
 }
 
-.serviceCard:hover .cardAction {
+.sealSvg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.sealText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sealText strong {
+  font-family: var(--font-sans);
+  font-size: 13px;
   color: var(--text-primary);
+  font-weight: 600;
 }
 
-.actionChevron {
-  transition: var(--transition-fast);
-}
-
-.serviceCard:hover .actionChevron {
-  transform: translateX(5px);
+.sealText span {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 /* ==========================================================================
    Estimation HUD Control Portal
    ========================================================================== */
 .estimatorSection {
-  padding: 160px 5%;
+  padding: 140px 5%;
   background: var(--primary-dark);
   border-top: 1px solid var(--glass-border);
 }
@@ -440,124 +589,24 @@
 }
 
 /* ==========================================================================
-   Slide Drawer details
+   Responsive Overrides
    ========================================================================== */
-.drawerOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(14, 23, 38, 0.6);
-  z-index: 1100;
-  opacity: 0;
-  visibility: hidden;
-  backdrop-filter: blur(8px);
-  transition: var(--transition-smooth);
-}
-
-.drawerOverlayActive {
-  opacity: 1;
-  visibility: visible;
-}
-
-.drawer {
-  position: fixed;
-  top: 0;
-  right: -600px;
-  width: 550px;
-  max-width: 100%;
-  height: 100%;
-  background: var(--primary-surface);
-  border-left: 1px solid var(--glass-border);
-  z-index: 1200;
-  box-shadow: -10px 0 40px rgba(14, 23, 38, 0.08);
-  padding: 80px 50px;
-  overflow-y: auto;
-  transition: var(--transition-smooth);
-}
-
-.drawerActive {
-  right: 0;
-}
-
-.closeBtn {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.closeBtn:hover {
-  color: var(--accent-gold);
-}
-
-.drawerTitle {
-  font-family: var(--font-serif);
-  font-size: 32px;
-  color: var(--text-primary);
-  line-height: 1.25;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--glass-border);
-}
-
-.drawerDesc {
-  font-family: var(--font-sans);
-  font-size: 15.5px;
-  line-height: 1.8;
-  color: var(--text-muted);
-  margin-bottom: 50px;
-}
-
-.scopeTitle {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--accent-gold);
-  margin-bottom: 24px;
-}
-
-.scopeList {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.scopeItem {
-  font-family: var(--font-sans);
-  font-size: 14.5px;
-  color: var(--text-primary);
-  position: relative;
-  padding-left: 28px;
-  line-height: 1.6;
-}
-
-.scopeItem::before {
-  content: "✦";
-  position: absolute;
-  left: 0;
-  color: var(--accent-gold);
-}
-
 @media (max-width: 991px) {
-  .servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+  .workspaceContainer {
+    flex-direction: column;
+    gap: 40px;
   }
   
-  .servicesGrid > div:nth-child(3n + 2),
-  .servicesGrid > div:nth-child(3n + 3) {
-    transform: translateY(0);
+  .sidebarColumn {
+    width: 100%;
+    flex: none;
   }
   
-  .servicesGrid > div:nth-child(2n + 2) {
-    transform: translateY(30px);
+  .consoleColumn {
+    width: 100%;
+    flex: none;
+    position: relative;
+    top: 0;
   }
   
   .estimatorContainer {
@@ -571,15 +620,15 @@
 }
 
 @media (max-width: 767px) {
-  .servicesGrid {
-    grid-template-columns: 1fr;
+  .stickyConsole {
+    padding: 30px 20px;
   }
   
-  .servicesGrid > div:nth-child(2n + 2) {
-    transform: translateY(0);
+  .sidebarItem {
+    padding: 20px;
   }
   
-  .drawer {
-    width: 100%;
+  .auditScopeBlock {
+    padding: 20px;
   }
 }

@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import { SERVICES_DATA, Service } from "../data";
 
 export default function Services() {
-  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [activeService, setActiveService] = useState<Service>(SERVICES_DATA[0]);
   
   // Scope estimator state
   const [propertyType, setPropertyType] = useState("residential");
@@ -56,38 +56,85 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Grid with Alternating Waves */}
-      <section className={styles.servicesSection} aria-label="Our Full Services Directory">
+      {/* Services Workspace (Split-Screen Interactive Dashboard) */}
+      <section className={styles.workspaceSection} aria-label="Our Full Services Directory">
         <div className={`${styles.gridIntro} scroll-reveal`}>
           <p className={styles.introText}>
-            We provide comprehensive technical, financial, and legal valuations for a diverse spectrum of assets. Select any core capability below to view the detailed structural compliance and auditing parameters involved.
+            We provide comprehensive technical, financial, and legal valuations for a diverse spectrum of assets. 
+            Click any service row in our live directory directory below to inspect its detailed structural compliance and auditing parameters.
           </p>
         </div>
 
-        <div className={styles.servicesGrid}>
-          {SERVICES_DATA.map((service, idx) => (
-            <div
-              key={service.id}
-              className={`${styles.serviceCard} scroll-reveal`}
-              style={{ transitionDelay: `${idx * 80}ms` }}
-              onClick={() => setSelectedService(service)}
-            >
-              <span className={styles.cardIndex}>{formatIndex(service.id)}</span>
-              <div className={styles.cardTop}>
-                <div className={styles.cardIcon}>
-                  <svg className={styles.cardIconSvg} viewBox="0 0 24 24">
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-                  </svg>
-                </div>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
-                <p className={styles.serviceDescription}>{service.description}</p>
+        <div className={styles.workspaceContainer}>
+          {/* Left Column: Sidebar Directory List */}
+          <div className={styles.sidebarColumn}>
+            <div className={styles.sidebarHeader}>
+              <h3 className={styles.sidebarTitle}>Services Directory</h3>
+              <span className={styles.sidebarCount}>{SERVICES_DATA.length} Capabilities</span>
+            </div>
+            <div className={styles.sidebarList}>
+              {SERVICES_DATA.map((service) => {
+                const isActive = activeService.id === service.id;
+                return (
+                  <div
+                    key={service.id}
+                    className={`${styles.sidebarItem} ${isActive ? styles.sidebarItemActive : ""}`}
+                    onClick={() => setActiveService(service)}
+                  >
+                    <span className={styles.sidebarIndex}>{formatIndex(service.id)}</span>
+                    <div className={styles.sidebarTextWrap}>
+                      <h4 className={styles.sidebarItemTitle}>{service.title}</h4>
+                      <p className={styles.sidebarItemSnippet}>
+                        {service.description.substring(0, 75)}...
+                      </p>
+                    </div>
+                    <div className={styles.sidebarArrow}>➔</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right Column: Dynamic Sticky Panoramic Detail Console */}
+          <div className={styles.consoleColumn}>
+            <div className={styles.stickyConsole}>
+              <div className={styles.consoleHeader}>
+                <span className={styles.consoleLabel}>Capability {formatIndex(activeService.id)}</span>
+                <h2 className={styles.consoleTitle}>{activeService.title}</h2>
+                <div className={styles.consoleDivider}></div>
               </div>
-              <div className={styles.cardAction}>
-                <span>Explore Scope</span>
-                <span className={styles.actionChevron}>➔</span>
+
+              <div className={styles.consoleBody}>
+                <p className={styles.consoleDesc}>{activeService.description}</p>
+
+                <div className={styles.auditScopeBlock}>
+                  <h3 className={styles.scopeHeaderTitle}>Technical Audit Scope & Compliance Parameters:</h3>
+                  <ul className={styles.scopeGrid}>
+                    {activeService.details.map((detail, dIdx) => (
+                      <li key={dIdx} className={styles.scopeGridItem}>
+                        <span className={styles.scopeGridBadge}>✦</span>
+                        <span className={styles.scopeGridText}>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles.consoleFooter}>
+                <div className={styles.regulatorySeal}>
+                  <div className={styles.sealIcon}>
+                    <svg viewBox="0 0 24 24" className={styles.sealSvg}>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    </svg>
+                  </div>
+                  <div className={styles.sealText}>
+                    <strong>Government Approved & Accredited</strong>
+                    <span>Complies with IBBI, IOV & Indian Income Tax wealth valuation acts.</span>
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -150,36 +197,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      {/* Slide Drawer for Service Details */}
-      <div
-        className={`${styles.drawerOverlay} ${selectedService ? styles.drawerOverlayActive : ""}`}
-        onClick={() => setSelectedService(null)}
-      >
-        <div
-          className={`${styles.drawer} ${selectedService ? styles.drawerActive : ""}`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <button className={styles.closeBtn} onClick={() => setSelectedService(null)}>
-            ✕
-          </button>
-          {selectedService && (
-            <>
-              <h2 className={styles.drawerTitle}>{selectedService.title}</h2>
-              <p className={styles.drawerDesc}>{selectedService.description}</p>
-              
-              <h3 className={styles.scopeTitle}>Technical Audit Scope Includes:</h3>
-              <ul className={styles.scopeList}>
-                {selectedService.details.map((item, idx) => (
-                  <li key={idx} className={styles.scopeItem}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
-      </div>
     </div>
   );
 }
