@@ -172,7 +172,7 @@ export const TEAM_DATA: TeamMember[] = [
       "Income Tax and Wealth Tax Valuer: 01 / RV / 19-20",
       "Govt. Registered Valuer IBBI: IBBI / RV / 02 / 2019 / 12354"
     ],
-    image: "/team/sanjay.png"
+    image: "/images/leaders/sanjay.png"
   },
   {
     name: "Chiranjeevi JS",
@@ -183,7 +183,7 @@ export const TEAM_DATA: TeamMember[] = [
       "Member of the Institution of Valuers (LIV)",
       "Structural Engineering Specialist & Asset Consultant"
     ],
-    image: "/team/chiranjeevi.png"
+    image: "/images/leaders/chiranjeevi.png"
   }
 ];
 
@@ -215,7 +215,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 1,
     title: "Sri Lakshmi Textile Mega Showroom",
     category: "textile",
-    image: "/projects/textile_1.jpg",
+    image: "/images/projects/textile showrooms/textile1.jpeg",
     location: "Chennai City Retail Zone",
     scope: "Full commercial building structural stability and market valuation."
   },
@@ -223,7 +223,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 2,
     title: "RMKV Grand Showroom Interior",
     category: "textile",
-    image: "/projects/textile_2.jpg",
+    image: "/images/projects/textile showrooms/textile2.jpeg",
     location: "Madurai Commercial Center",
     scope: "Valuation of interior fit-outs, inventory racking system, and fixtures."
   },
@@ -231,7 +231,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 3,
     title: "Pothys Lifestyle Showroom Wing",
     category: "textile",
-    image: "/projects/textile_3.jpg",
+    image: "/images/projects/textile showrooms/textile3.jpeg",
     location: "Coimbatore Shopping District",
     scope: "Mortgage security valuation for bank financing expansion."
   },
@@ -239,7 +239,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 4,
     title: "True Waves International Academy",
     category: "education",
-    image: "/projects/edu_1.jpg",
+    image: "/images/projects/educational instutuions/educational1.jpeg",
     location: "Kanchipuram District Campus",
     scope: "Stage valuation of under-construction academic blocks."
   },
@@ -247,7 +247,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 5,
     title: "Modern STEM Lab & Lecture Hall",
     category: "education",
-    image: "/projects/edu_2.jpg",
+    image: "/images/projects/educational instutuions/educational2.jpeg",
     location: "Madurai University Outskirts",
     scope: "Equipment audit, asset valuation, and physical stability certification."
   },
@@ -255,7 +255,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: 6,
     title: "Tagore Memorial Educational Block",
     category: "education",
-    image: "/projects/edu_3.jpg",
+    image: "/images/projects/educational instutuions/educational3.jpeg",
     location: "Chennai Suburbs Campus",
     scope: "Complete structural safety certification and land valuation audit."
   }

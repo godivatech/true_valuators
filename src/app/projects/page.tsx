@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
 import { PROJECTS_DATA, ProjectItem } from "../data";
 
@@ -16,8 +17,14 @@ export default function Projects() {
     <div className={styles.main}>
       {/* Page Hero */}
       <section className={styles.projectsHero}>
+        <div className={styles.watermark}>PORTFOLIO</div>
         <span className={styles.subtitle}>Our Portfolio</span>
         <h1 className={styles.title}>Valuation Projects</h1>
+        <div className={styles.breadcrumbs}>
+          <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+          <span className={styles.breadcrumbSeparator}>/</span>
+          <span>Projects</span>
+        </div>
       </section>
 
       {/* filterable Projects Section */}
@@ -52,25 +59,13 @@ export default function Projects() {
               onClick={() => setSelectedProject(project)}
             >
               <div className={styles.imageWrapper}>
-                {/* Premium inline architectural drafting SVG representation */}
-                <svg className={styles.buildingVector} viewBox="0 0 24 24">
-                  <path d="M19 2H5c-1.1 0-2 .9-2 2v17h2v-2h14v2h2V4c0-1.1-.9-2-2-2zm0 15H5V4h14v13zM7 6h4v3H7zm6 0h4v3h-4zm-6 5h4v3H7zm6 0h4v3h-4z" />
-                </svg>
-                <div className={styles.imageOverlay}>
-                  <span className={styles.overlayCategory}>{project.category === "textile" ? "Commercial Audit" : "Educational Audit"}</span>
-                  <h3 className={styles.overlayTitle}>{project.title}</h3>
-                  <span className={styles.overlayLocation}>{project.location}</span>
-                  <p className={styles.overlayScope}>{project.scope}</p>
-                </div>
-              </div>
-              <div className={styles.cardBottomInfo}>
-                <div className={styles.cardTitleWrap}>
-                  <h3 className={styles.cardTitle}>{project.title}</h3>
-                  <span className={styles.cardSubtitle}>
-                    {project.category === "textile" ? "Commercial Audit" : "Educational Audit"}
-                  </span>
-                </div>
-                <div className={styles.cardArrow}>➔</div>
+                {project.image ? (
+                  <img src={project.image} alt="Project Image" className={styles.projectImage} />
+                ) : (
+                  <svg className={styles.buildingVector} viewBox="0 0 24 24">
+                    <path d="M19 2H5c-1.1 0-2 .9-2 2v17h2v-2h14v2h2V4c0-1.1-.9-2-2-2zm0 15H5V4h14v13zM7 6h4v3H7zm6 0h4v3h-4zm-6 5h4v3H7zm6 0h4v3h-4z" />
+                  </svg>
+                )}
               </div>
             </div>
           ))}
@@ -94,24 +89,15 @@ export default function Projects() {
             ✕
           </button>
           {selectedProject && (
-            <>
-              <div className={styles.lightboxImageBlock}>
+            <div className={styles.lightboxImageBlock}>
+              {selectedProject.image ? (
+                <img src={selectedProject.image} alt="Project Image" className={styles.lightboxImage} />
+              ) : (
                 <svg className={styles.lightboxLargeVector} viewBox="0 0 24 24">
                   <path d="M19 2H5c-1.1 0-2 .9-2 2v17h2v-2h14v2h2V4c0-1.1-.9-2-2-2zm0 15H5V4h14v13zM7 6h4v3H7zm6 0h4v3h-4zm-6 5h4v3H7zm6 0h4v3h-4z" />
                 </svg>
-              </div>
-              <div className={styles.lightboxText}>
-                <span className={styles.lightboxCategory}>
-                  {selectedProject.category === "textile" ? "Commercial Showroom" : "Educational Campus"}
-                </span>
-                <h2 className={styles.lightboxTitle}>{selectedProject.title}</h2>
-                <span className={styles.lightboxLocation}>{selectedProject.location}</span>
-                <div style={{ marginTop: "20px" }}>
-                  <h3 className={styles.lightboxScopeTitle}>Valuation & Audit Scope:</h3>
-                  <p className={styles.lightboxScopeText}>{selectedProject.scope}</p>
-                </div>
-              </div>
-            </>
+              )}
+            </div>
           )}
         </div>
       </div>

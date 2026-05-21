@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
 import { OFFICE_CONTACTS } from "../data";
 
@@ -42,8 +43,14 @@ export default function Contact() {
     <div className={styles.main}>
       {/* Page Hero */}
       <section className={styles.contactHero}>
+        <div className={styles.watermark}>CONTACT</div>
         <span className={styles.subtitle}>Get In Touch</span>
         <h1 className={styles.title}>Contact Our Offices</h1>
+        <div className={styles.breadcrumbs}>
+          <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+          <span className={styles.breadcrumbSeparator}>/</span>
+          <span>Contact</span>
+        </div>
       </section>
 
       {/* Offices Grid */}

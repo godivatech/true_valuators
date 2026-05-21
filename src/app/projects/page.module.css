@@ -5,17 +5,48 @@
 }
 
 .projectsHero {
-  background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
-  padding: 180px 5% 100px 5%;
+  background: linear-gradient(135deg, #0E1726 0%, #151f32 100%);
+  padding: 180px 5% 120px 5%;
   text-align: center;
   border-bottom: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectsHero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(80, 97, 124, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.projectsHero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
 }
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 5.5vw, 60px);
-  color: var(--text-primary);
-  margin-bottom: 20px;
+  font-size: clamp(38px, 6vw, 58px);
+  color: #FFFFFF;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
@@ -24,7 +55,52 @@
   font-weight: 600;
   color: var(--accent-gold);
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.watermark {
+  position: absolute;
+  bottom: -20px;
+  font-family: var(--font-serif);
+  font-size: clamp(100px, 15vw, 180px);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  line-height: 1;
+}
+
+.breadcrumbs {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumbLink {
+  color: rgba(255, 255, 255, 0.5);
+  transition: var(--transition-fast);
+}
+
+.breadcrumbLink:hover {
+  color: var(--accent-gold);
+}
+
+.breadcrumbSeparator {
+  color: var(--accent-gold);
 }
 
 /* ==========================================================================
@@ -145,6 +221,17 @@
   position: relative;
   overflow: hidden;
   transition: var(--transition-smooth);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
 }
 
 /* Technical Drafting blueprint vector background */
@@ -294,7 +381,7 @@
   position: relative;
   background: var(--primary-surface);
   border: 1px solid var(--glass-border);
-  max-width: 900px;
+  max-width: 1100px;
   width: 100%;
   border-radius: 24px;
   overflow: hidden;
@@ -307,26 +394,44 @@
   position: absolute;
   top: 25px;
   right: 30px;
-  background: transparent;
-  border: none;
-  font-size: 26px;
+  background: rgba(14, 23, 38, 0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--glass-border);
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 100;
   transition: var(--transition-fast);
 }
 
 .lightboxClose:hover {
   color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  background: var(--primary-dark);
 }
 
 .lightboxImageBlock {
-  height: 400px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 80vh;
   background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(80, 97, 124, 0.05) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+}
+
+.lightboxImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .lightboxLargeVector {

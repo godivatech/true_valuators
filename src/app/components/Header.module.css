@@ -192,12 +192,12 @@
   }
 }
 
-/* Enforce pure white text elements when transparent on dark Hero slides */
-.homeTop .logoSubtext,
-.homeTop .navLink {
+/* Enforce pure white text elements when transparent on dark Hero slides/banners */
+.transparentTop .logoSubtext,
+.transparentTop .navLink {
   color: #FFFFFF !important;
 }
 
-.homeTop .burgerLine {
+.transparentTop .burgerLine {
   background-color: #FFFFFF !important;
 }

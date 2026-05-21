@@ -9,19 +9,19 @@ const HERO_SLIDES = [
   {
     title: "Valuation services designed for modern enterprises",
     subtitle: "Most Trusted Valuation Firm",
-    bgGradient: "linear-gradient(135deg, #0E1628 0%, #050811 100%)",
+    image: "/images/hero section/1.png",
     number: "01"
   },
   {
     title: "Accurate physical and technical value assessment",
     subtitle: "Property Valuers & Consultant Engineers",
-    bgGradient: "linear-gradient(135deg, #131E35 0%, #070B16 100%)",
+    image: "/images/hero section/2.png",
     number: "02"
   },
   {
     title: "Regulatory compliance reporting built on precision",
     subtitle: "Accredited Chartered Engineers",
-    bgGradient: "linear-gradient(135deg, #1A2845 0%, #0A0F1D 100%)",
+    image: "/images/hero section/1.png",
     number: "03"
   }
 ];
@@ -129,10 +129,14 @@ export default function Home() {
             >
               <div 
                 className={styles.slideImageWrapper}
-                style={{ background: slide.bgGradient }}
+                style={{ 
+                  backgroundImage: `linear-gradient(180deg, rgba(14, 23, 38, 0.45) 0%, rgba(5, 8, 17, 0.75) 100%), url('${slide.image}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
               />
               <div className={styles.heroContent}>
-                <span className={styles.floatingNumber}>{slide.number}</span>
                 <div className={styles.textBlock}>
                   <span className={styles.heroSubtitle}>{slide.subtitle}</span>
                   <h1 className={styles.heroTitle}>{slide.title}</h1>
@@ -165,37 +169,37 @@ export default function Home() {
           <div className={styles.scrollRow}>
             <div className="animate-scroll-left">
               <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>State Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="State Bank of India">
+                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Union Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
+                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Canara Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Canara Bank">
+                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Indian Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
+                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>SBI Mortgage Division</span>
+                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
+                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
                 </div>
               </div>
               <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>State Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="State Bank of India">
+                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Union Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
+                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Canara Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Canara Bank">
+                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Indian Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
+                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>SBI Mortgage Division</span>
+                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
+                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
                 </div>
               </div>
             </div>
@@ -205,37 +209,37 @@ export default function Home() {
           <div className={styles.scrollRow}>
             <div className="animate-scroll-right">
               <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>SBI Mortgage Division</span>
+                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
+                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Indian Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
+                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Canara Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Canara Bank">
+                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Union Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
+                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>State Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="State Bank of India">
+                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
                 </div>
               </div>
               <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>SBI Mortgage Division</span>
+                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
+                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Indian Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
+                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Canara Bank</span>
+                <div className={styles.partnerLogoWrapper} title="Canara Bank">
+                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>Union Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
+                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
                 </div>
-                <div className={styles.partnerLogoWrapper}>
-                  <span className={styles.partnerLogoText}>State Bank of India</span>
+                <div className={styles.partnerLogoWrapper} title="State Bank of India">
+                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
                 </div>
               </div>
             </div>

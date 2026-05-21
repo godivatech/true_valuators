@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
 import { SERVICES_DATA, Service } from "../data";
 
@@ -45,8 +46,14 @@ export default function Services() {
     <div className={styles.main}>
       {/* Page Hero */}
       <section className={styles.servicesHero}>
+        <div className={styles.watermark}>SERVICES</div>
         <span className={styles.subtitle}>What We Offer</span>
         <h1 className={styles.title}>Valuation Services</h1>
+        <div className={styles.breadcrumbs}>
+          <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+          <span className={styles.breadcrumbSeparator}>/</span>
+          <span>Services</span>
+        </div>
       </section>
 
       {/* Services Grid with Alternating Waves */}

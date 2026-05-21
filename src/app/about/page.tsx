@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./page.module.css";
 import { TEAM_DATA } from "../data";
 
@@ -8,8 +9,14 @@ export default function About() {
     <div className={styles.main}>
       {/* Page Hero */}
       <section className={styles.aboutHero}>
+        <div className={styles.watermark}>ABOUT</div>
         <span className={styles.subtitle}>Who We Are</span>
         <h1 className={styles.title}>About Our Firm</h1>
+        <div className={styles.breadcrumbs}>
+          <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+          <span className={styles.breadcrumbSeparator}>/</span>
+          <span>About</span>
+        </div>
       </section>
 
       {/* Team Profiles */}
@@ -29,9 +36,13 @@ export default function About() {
               style={{ transitionDelay: `${idx * 200}ms` }}
             >
               <div className={styles.profileImageWrapper}>
-                <div className={styles.avatarPlaceholder}>
-                  {member.name.split(" ").map(n => n[0]).join("")}
-                </div>
+                {member.image ? (
+                  <img src={member.image} alt={member.name} className={styles.profileImage} />
+                ) : (
+                  <div className={styles.avatarPlaceholder}>
+                    {member.name.split(" ").map(n => n[0]).join("")}
+                  </div>
+                )}
               </div>
               <div className={styles.profileContent}>
                 <h3 className={styles.memberName}>{member.name}</h3>
@@ -101,23 +112,31 @@ export default function About() {
 
         <div className={styles.affiliationsGrid}>
           <div className={`${styles.affiliationCard} scroll-reveal`}>
-            <div className={`${styles.badgeCircle} ${styles.ibbiText}`}>IBBI</div>
-            <span className={styles.affiliationLabel}>Office bearers of IOV & Insolvency Valuer</span>
+            <div className={styles.badgeCircle}>
+              <img src="/images/Trusted Affiliations/office bearers of iov.png" alt="Office bearers of IOV" className={styles.affiliationLogo} />
+            </div>
+            <span className={styles.affiliationLabel}>Office Bearers of IOV & Insolvency Valuers</span>
           </div>
 
           <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "150ms" }}>
-            <div className={`${styles.badgeCircle} ${styles.iovText}`}>IOV</div>
+            <div className={styles.badgeCircle}>
+              <img src="/images/Trusted Affiliations/instution of valuers.png" alt="Institution of Valuers" className={styles.affiliationLogo} />
+            </div>
             <span className={styles.affiliationLabel}>Institution of Valuers Registered Panel</span>
           </div>
 
           <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "300ms" }}>
-            <div className={`${styles.badgeCircle} ${styles.itText}`}>IT</div>
+            <div className={styles.badgeCircle}>
+              <img src="/images/Trusted Affiliations/It registered valuer.png" alt="Income Tax Valuer" className={styles.affiliationLogo} />
+            </div>
             <span className={styles.affiliationLabel}>Income Tax & Wealth Tax Registered Valuer</span>
           </div>
 
           <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "450ms" }}>
-            <div className={`${styles.badgeCircle} ${styles.ieText}`}>IEI</div>
-            <span className={styles.affiliationLabel}>The Institution of Engineers (India)</span>
+            <div className={styles.badgeCircle}>
+              <img src="/images/Trusted Affiliations/the instiution of valuers.png" alt="The Institution of Valuers Seal" className={styles.affiliationLogo} />
+            </div>
+            <span className={styles.affiliationLabel}>The Institution of Valuers Official Seal</span>
           </div>
         </div>
       </section>
