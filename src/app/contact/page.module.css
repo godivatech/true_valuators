@@ -279,6 +279,7 @@
   border-radius: 6px;
   outline: none;
   transition: var(--transition-smooth);
+  width: 100%;
 }
 
 .inputField:focus,

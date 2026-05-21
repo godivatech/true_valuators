@@ -202,7 +202,7 @@ export default function Contact() {
                 </select>
               </div>
 
-              <div className={styles.formGroupFull}>
+              <div className={`${styles.formGroup} ${styles.formGroupFull}`}>
                 <label className={styles.formLabel}>Preferred Office Review Center</label>
                 <select
                   name="officePreference"
@@ -215,7 +215,7 @@ export default function Contact() {
                 </select>
               </div>
 
-              <div className={styles.formGroupFull}>
+              <div className={`${styles.formGroup} ${styles.formGroupFull}`}>
                 <label className={styles.formLabel}>Property Dimensions & Site Parameters</label>
                 <textarea
                   name="message"
