@@ -391,19 +391,17 @@
   margin: 0 auto;
 }
 
-/* Asymmetric Bento Grid */
+/* Symmetrical 2x2 Bento Grid */
 .bentoGrid {
-  max-width: 1250px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 240px;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
 .bentoCard {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
+  background: var(--primary-surface);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 40px;
@@ -411,25 +409,27 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
   transition: var(--transition-smooth);
   box-shadow: var(--soft-shadow);
 }
 
 .bentoCard:hover {
-  border-color: var(--accent-gold-light);
-  transform: translateY(-8px);
+  border-color: var(--accent-gold);
+  transform: translateY(-6px);
   box-shadow: var(--hover-shadow);
 }
 
-/* Decorative background light mesh for cards */
+/* Decorative background light glow mesh for cards */
 .cardBgGlow {
   position: absolute;
   top: -50%;
   right: -50%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(212, 157, 106, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.05) 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
   transition: var(--transition-smooth);
@@ -439,32 +439,17 @@
   transform: scale(1.3);
 }
 
-/* Specific grids config for dynamic masonry Bento */
-.cardLargeHorizontal {
-  grid-column: span 8;
-  grid-row: span 1;
-  flex-direction: row;
-  align-items: center;
-  gap: 40px;
-}
-
-.cardTallVertical {
-  grid-column: span 4;
-  grid-row: span 2;
-  justify-content: flex-end;
-}
-
-.cardSquareCompact {
-  grid-column: span 4;
-  grid-row: span 1;
-}
-
+/* Standardization of Bento classes for uniform grid presentation */
+.cardLargeHorizontal,
+.cardTallVertical,
+.cardSquareCompact,
 .cardWideMedium {
-  grid-column: span 8;
+  grid-column: span 1;
   grid-row: span 1;
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
 }
 
 /* Content styles */
@@ -745,17 +730,9 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1199px) {
-  .bentoGrid {
-    grid-auto-rows: 220px;
-  }
-}
-
 @media (max-width: 991px) {
   .bentoGrid {
-    display: flex;
-    flex-direction: column;
-    height: auto;
+    grid-template-columns: 1fr;
   }
   
   .cardLargeHorizontal,
