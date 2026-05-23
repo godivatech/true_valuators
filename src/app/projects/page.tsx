@@ -54,7 +54,7 @@ export default function Projects() {
           {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
-              className={`${styles.projectCard} scroll-reveal`}
+              className={styles.projectCard}
               style={{ transitionDelay: `${idx * 100}ms` }}
               onClick={() => setSelectedProject(project)}
             >
