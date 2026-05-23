@@ -345,6 +345,10 @@
   background: var(--primary-darker);
 }
 
+.affiliationsSection .title {
+  color: var(--text-primary);
+}
+
 .affiliationsGrid {
   max-width: 1200px;
   margin: 0 auto;

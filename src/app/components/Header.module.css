@@ -24,16 +24,45 @@
 
 .logoContainer {
   display: flex;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  height: 100%;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.scrolled .logoContainer {
+  width: 280px;
+}
+
+.logoImage {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: var(--transition-smooth);
+}
+
+.scrolled .logoImage {
+  width: 280px;
+  height: 280px;
+}
+
+.logoBrand {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .logoText {
   font-family: var(--font-serif);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--accent-gold);
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: 0.5px;
 }
 

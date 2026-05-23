@@ -22,8 +22,20 @@
 
 .logoContainer {
   display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.footerLogo {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.logoBrand {
+  display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 .logoText {
@@ -31,7 +43,7 @@
   font-size: 28px;
   font-weight: 700;
   color: var(--accent-gold);
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .logoSubtext {

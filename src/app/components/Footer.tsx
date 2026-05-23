@@ -18,8 +18,7 @@ export default function Footer() {
         {/* Brand Column */}
         <div className={styles.column}>
           <div className={styles.logoContainer}>
-            <span className={styles.logoText}>True Valuators</span>
-            <span className={styles.logoSubtext}>Property Valuers & Consultant Engineers</span>
+            <img src="/images/Logo.png" alt="True Valuators Logo" className={styles.footerLogo} />
           </div>
           <p className={styles.description}>
             A team of qualified and experienced professionals who are part of the Institution of Valuers (IOV), Institution of Engineers, and Insolvency and Bankruptcy Board of India. We deliver precise values without variation through verified legal, technical, and revenue audit channels.

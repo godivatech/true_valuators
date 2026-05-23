@@ -41,8 +41,7 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${!scrolled ? styles.transparentTop : ""}`}>
       <Link href="/" className={styles.logoContainer}>
-        <span className={styles.logoText}>True Valuators</span>
-        <span className={styles.logoSubtext}>Property Valuers & Consultant Engineers</span>
+        <img src="/images/Logo.png" alt="True Valuators Logo" className={styles.logoImage} />
       </Link>
 
       <button 

@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description: "Approved Government Registered Valuers and Chartered Engineers under IOV, IBBI, and Income Tax Department. Providing precise property and industrial asset valuations across Chennai, Madurai, and India.",
   keywords: "True Valuators, Property Valuer Chennai, Chartered Engineers Madurai, Govt Registered Valuer, Asset Valuation India, IBBI Valuer, IOV Valuers, Real Estate Valuation",
   robots: "index, follow",
+  icons: {
+    icon: "/images/Logo.png",
+    apple: "/images/Logo.png",
+  },
 };
 
 export default function RootLayout({
