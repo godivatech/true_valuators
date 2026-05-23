@@ -10,16 +10,14 @@
   padding: 0 5%;
   z-index: 1000;
   transition: var(--transition-smooth);
-  background: transparent;
-  border-bottom: 1px solid transparent;
-}
-
-.scrolled {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
-  height: 80px;
   box-shadow: var(--soft-shadow);
+}
+
+.scrolled {
+  height: 80px;
 }
 
 .logoContainer {
@@ -227,12 +225,3 @@
   }
 }
 
-/* Enforce pure white text elements when transparent on dark Hero slides/banners */
-.transparentTop .logoSubtext,
-.transparentTop .navLink {
-  color: #FFFFFF !important;
-}
-
-.transparentTop .burgerLine {
-  background-color: #FFFFFF !important;
-}

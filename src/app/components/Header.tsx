@@ -39,7 +39,7 @@ export default function Header() {
   const isHome = pathname === "/";
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${!scrolled ? styles.transparentTop : ""}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <Link href="/" className={styles.logoContainer}>
         <img src="/images/Logo.png" alt="True Valuators Logo" className={styles.logoImage} />
       </Link>
