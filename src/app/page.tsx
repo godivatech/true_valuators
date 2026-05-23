@@ -130,7 +130,7 @@ export default function Home() {
               <div 
                 className={styles.slideImageWrapper}
                 style={{ 
-                  backgroundImage: `linear-gradient(180deg, rgba(10, 17, 40, 0.45) 0%, rgba(6, 10, 24, 0.75) 100%), url('${slide.image}')`,
+                  backgroundImage: `linear-gradient(180deg, rgba(10, 17, 40, 0.25) 0%, rgba(6, 10, 24, 0.4) 100%), url('${slide.image}')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
