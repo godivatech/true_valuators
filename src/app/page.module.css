@@ -279,6 +279,7 @@
   width: 100%;
   overflow: hidden;
   display: flex;
+  padding: 15px 0;
 }
 
 .logoGroup {
