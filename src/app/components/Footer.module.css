@@ -21,15 +21,21 @@
 }
 
 .logoContainer {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  display: block;
+  width: 320px;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
   margin-bottom: 25px;
 }
 
 .footerLogo {
-  width: 350px;
-  height: 350px;
+  width: 320px;
+  height: 320px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   object-fit: contain;
 }
 
