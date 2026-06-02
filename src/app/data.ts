@@ -264,7 +264,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
 export const OFFICE_CONTACTS = {
   chennai: {
     city: "Chennai",
-    address: "27/5, Easwaran Koil Street, Vellai Thottam, West Mambalam, Chennai-600 033",
+    address: "17/13, Easwaran Koil Street, Vellai Thottam, West Mambalam, Chennai-600 033",
     phone: "044-45837877",
     email: "truevaluators@gmail.com"
   },
