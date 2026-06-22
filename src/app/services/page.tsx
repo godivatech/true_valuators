@@ -7,10 +7,33 @@ import { SERVICES_DATA, Service } from "../data";
 
 export default function Services() {
   const [activeService, setActiveService] = useState<Service>(SERVICES_DATA[0]);
+  const [selectedPillar, setSelectedPillar] = useState<string | null>(null);
   
   // Scope estimator state
   const [propertyType, setPropertyType] = useState("residential");
   const [areaSize, setAreaSize] = useState(1500);
+
+  const getServicePillar = (id: number) => {
+    if ([1, 2, 4, 5, 11].includes(id)) return 'real-estate';
+    if ([6, 7].includes(id)) return 'business';
+    return 'legal-financial';
+  };
+
+  const handlePillarClick = (pillar: string) => {
+    const nextPillar = selectedPillar === pillar ? null : pillar;
+    setSelectedPillar(nextPillar);
+    
+    const filtered = nextPillar
+      ? SERVICES_DATA.filter(s => getServicePillar(s.id) === nextPillar)
+      : SERVICES_DATA;
+    if (filtered.length > 0) {
+      setActiveService(filtered[0]);
+    }
+  };
+
+  const filteredServices = selectedPillar 
+    ? SERVICES_DATA.filter(service => getServicePillar(service.id) === selectedPillar)
+    : SERVICES_DATA;
 
   const getRecommendedServices = (type: string) => {
     switch (type) {
@@ -37,7 +60,6 @@ export default function Services() {
     }
   };
 
-  // Helper to format indexes (e.g., 1 -> "01")
   const formatIndex = (id: number) => {
     return id < 10 ? `0${id}` : `${id}`;
   };
@@ -56,12 +78,70 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Services Verticals Pillars */}
+      <section className={styles.pillarsSection} aria-label="Valuation Service Verticals">
+        <div className={styles.pillarsContainer}>
+          <div className={styles.pillarsTitleBlock}>
+            <span className={styles.pillarsSubtitle}>Service Pillars</span>
+            <h2 className={styles.pillarsTitle}>Three Core Valuation Verticals</h2>
+            <p className={styles.pillarsDesc}>
+              We classify our advisory and technical valuation audits under three core pillars. Click any vertical below to inspect or filter our detailed directory:
+            </p>
+          </div>
+
+          <div className={styles.pillarsFlow}>
+            <div className={styles.flowLine}></div>
+
+            <div className={styles.pillarsGrid}>
+              <div 
+                className={`${styles.pillarCard} ${selectedPillar === 'real-estate' ? styles.pillarCardActive : ''}`}
+                onClick={() => handlePillarClick('real-estate')}
+              >
+                <div className={styles.pillarIndicator}></div>
+                <div className={styles.pillarInfo}>
+                  <h3 className={styles.pillarName}>Real Estate Valuation</h3>
+                  <span className={styles.pillarMeta}>5 Core Capabilities</span>
+                </div>
+              </div>
+
+              <div 
+                className={`${styles.pillarCard} ${selectedPillar === 'business' ? styles.pillarCardActive : ''}`}
+                onClick={() => handlePillarClick('business')}
+              >
+                <div className={styles.pillarIndicator}></div>
+                <div className={styles.pillarInfo}>
+                  <h3 className={styles.pillarName}>Business Valuation</h3>
+                  <span className={styles.pillarMeta}>2 Core Capabilities</span>
+                </div>
+              </div>
+
+              <div 
+                className={`${styles.pillarCard} ${selectedPillar === 'legal-financial' ? styles.pillarCardActive : ''}`}
+                onClick={() => handlePillarClick('legal-financial')}
+              >
+                <div className={styles.pillarIndicator}></div>
+                <div className={styles.pillarInfo}>
+                  <h3 className={styles.pillarName}>Legal & Financial Support Valuation</h3>
+                  <span className={styles.pillarMeta}>5 Core Capabilities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {selectedPillar && (
+            <button className={styles.clearFilterBtn} onClick={() => { setSelectedPillar(null); setActiveService(SERVICES_DATA[0]); }}>
+              Showing {filteredServices.length} filtered results. Click here to show all {SERVICES_DATA.length} services.
+            </button>
+          )}
+        </div>
+      </section>
+
       {/* Services Workspace (Split-Screen Interactive Dashboard) */}
       <section className={styles.workspaceSection} aria-label="Our Full Services Directory">
         <div className={`${styles.gridIntro} scroll-reveal`}>
           <p className={styles.introText}>
             We provide comprehensive technical, financial, and legal valuations for a diverse spectrum of assets. 
-            Click any service row in our live directory directory below to inspect its detailed structural compliance and auditing parameters.
+            Click any service row in our live directory below to inspect its detailed structural compliance and auditing parameters.
           </p>
         </div>
 
@@ -70,10 +150,10 @@ export default function Services() {
           <div className={styles.sidebarColumn}>
             <div className={styles.sidebarHeader}>
               <h3 className={styles.sidebarTitle}>Services Directory</h3>
-              <span className={styles.sidebarCount}>{SERVICES_DATA.length} Capabilities</span>
+              <span className={styles.sidebarCount}>{filteredServices.length} Capabilities</span>
             </div>
             <div className={styles.sidebarList}>
-              {SERVICES_DATA.map((service) => {
+              {filteredServices.map((service) => {
                 const isActive = activeService.id === service.id;
                 return (
                   <div

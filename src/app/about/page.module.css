@@ -447,3 +447,244 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Global Standards & Professional Excellence Section
+   ========================================================================== */
+.standardsSection {
+  padding: 120px 5%;
+  background: var(--primary-dark);
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.standardsGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.standardsCard {
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 55px 45px;
+  box-shadow: var(--soft-shadow);
+}
+
+.standardsHeader {
+  margin-bottom: 25px;
+}
+
+.standardsSubtitle {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.standardsTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4vw, 34px);
+  color: var(--text-primary);
+  margin-top: 10px;
+  line-height: 1.3;
+}
+
+.standardsLine {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-gold);
+  margin-top: 18px;
+}
+
+.standardsText {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.standardsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.standardsItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.standardsCheck {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(58, 190, 249, 0.1);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.expertiseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.expertiseHeader {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 24px);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.expertiseGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.expertiseItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 18px 24px;
+  transition: var(--transition-smooth);
+}
+
+.expertiseItem:hover {
+  border-color: var(--accent-gold);
+  transform: translateX(6px);
+  box-shadow: var(--hover-shadow);
+}
+
+.expertiseNum {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.expertiseText {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Association with 3V PRO
+   ========================================================================== */
+.associationCallout {
+  max-width: 1200px;
+  margin: 80px auto 0 auto;
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border-glow);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: var(--soft-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.associationCallout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-gold);
+}
+
+.associationCalloutContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.associationLogoWrapper {
+  width: 120px;
+  height: 60px;
+  background: var(--primary-dark);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.associationLogoText {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+}
+
+.associationCalloutText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.associationCalloutTitle {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--text-primary);
+}
+
+.associationCalloutDescription {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.associationLink {
+  color: var(--accent-gold);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: var(--transition-fast);
+}
+
+.associationLink:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 991px) {
+  .standardsGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .associationCalloutContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

@@ -102,6 +102,70 @@ export default function About() {
         </div>
       </section>
 
+      {/* Global Standards & Professional Excellence */}
+      <section className={styles.standardsSection} aria-label="Global Standards & Professional Excellence">
+        <div className={styles.standardsGrid}>
+          {/* RICS Card */}
+          <div className={`${styles.standardsCard} scroll-reveal-left`}>
+            <div className={styles.standardsHeader}>
+              <span className={styles.standardsSubtitle}>RICS Compliance</span>
+              <h2 className={styles.standardsTitle}>Global Standards & Professional Excellence</h2>
+              <div className={styles.standardsLine}></div>
+            </div>
+            
+            <p className={styles.standardsText}>
+              We abide by the standards issued by the Royal Institution of Chartered Surveyors (RICS) of the United Kingdom, ensuring:
+            </p>
+
+            <ul className={styles.standardsList}>
+              <li className={styles.standardsItem}>
+                <div className={styles.standardsCheck}>✓</div>
+                <span>International valuation standards</span>
+              </li>
+              <li className={styles.standardsItem}>
+                <div className={styles.standardsCheck}>✓</div>
+                <span>Ethical and transparent practices</span>
+              </li>
+              <li className={styles.standardsItem}>
+                <div className={styles.standardsCheck}>✓</div>
+                <span>Accurate and unbiased reporting</span>
+              </li>
+              <li className={styles.standardsItem}>
+                <div className={styles.standardsCheck}>✓</div>
+                <span>Reliable and compliant valuation services</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Expertise List Card */}
+          <div className={`${styles.expertiseCard} scroll-reveal-right`}>
+            <h3 className={styles.expertiseHeader}>Our expertise spans across:</h3>
+            <div className={styles.expertiseGrid}>
+              <div className={styles.expertiseItem}>
+                <span className={styles.expertiseNum}>01</span>
+                <span className={styles.expertiseText}>Real Estate Valuation</span>
+              </div>
+              <div className={styles.expertiseItem}>
+                <span className={styles.expertiseNum}>02</span>
+                <span className={styles.expertiseText}>Industrial Assets</span>
+              </div>
+              <div className={styles.expertiseItem}>
+                <span className={styles.expertiseNum}>03</span>
+                <span className={styles.expertiseText}>Machinery & Equipment</span>
+              </div>
+              <div className={styles.expertiseItem}>
+                <span className={styles.expertiseNum}>04</span>
+                <span className={styles.expertiseText}>Financial Assets</span>
+              </div>
+              <div className={styles.expertiseItem}>
+                <span className={styles.expertiseNum}>05</span>
+                <span className={styles.expertiseText}>Business Valuation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Trusted Affiliations */}
       <section className={styles.affiliationsSection} aria-label="Trusted Affiliations & Registrations">
         <div className={`scroll-reveal`} style={{ textAlign: "center", marginBottom: "80px" }}>
@@ -129,6 +193,21 @@ export default function About() {
           <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "450ms" }}>
             <img src="/images/Trusted Affiliations/the instiution of valuers.png" alt="The Institution of Valuers Seal" className={styles.affiliationLogo} />
             <span className={styles.affiliationLabel}>The Institution of Valuers Official Seal</span>
+          </div>
+        </div>
+
+        {/* Association with 3V PRO */}
+        <div className={`${styles.associationCallout} scroll-reveal`} style={{ transitionDelay: "600ms" }}>
+          <div className={styles.associationCalloutContent}>
+            <div className={styles.associationLogoWrapper}>
+              <span className={styles.associationLogoText}>3V PRO</span>
+            </div>
+            <div className={styles.associationCalloutText}>
+              <h3 className={styles.associationCalloutTitle}>Association with 3V PRO</h3>
+              <p className={styles.associationCalloutDescription}>
+                We are proud to be associated with <a href="https://3vpro.in" target="_blank" rel="noopener noreferrer" className={styles.associationLink}>3V PRO</a>, a reputed valuation and insolvency professional organization offering comprehensive valuation and advisory services across multiple domains.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -421,6 +421,59 @@
   box-shadow: var(--hover-shadow);
 }
 
+/* Bento Card Connectors to display process flow */
+@media (min-width: 992px) {
+  .bentoCard {
+    position: relative;
+  }
+
+  .bentoCard:nth-child(1)::after {
+    content: "➔";
+    position: absolute;
+    right: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: var(--accent-gold);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: var(--transition-smooth);
+  }
+
+  .bentoCard:nth-child(2)::after {
+    content: "⬃";
+    position: absolute;
+    bottom: -25px;
+    left: -20px;
+    font-size: 32px;
+    color: var(--accent-gold);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: var(--transition-smooth);
+  }
+
+  .bentoCard:nth-child(3)::after {
+    content: "➔";
+    position: absolute;
+    right: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: var(--accent-gold);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: var(--transition-smooth);
+  }
+  
+  .bentoCard:hover::after {
+    opacity: 1;
+    color: var(--accent-gold);
+  }
+}
+
 /* Decorative background light glow mesh for cards */
 .cardBgGlow {
   position: absolute;
