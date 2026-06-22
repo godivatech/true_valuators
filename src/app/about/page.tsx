@@ -30,8 +30,8 @@ export default function About() {
 
         <div className={styles.teamGrid}>
           {TEAM_DATA.map((member, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`${styles.profileCard} scroll-reveal`}
               style={{ transitionDelay: `${idx * 200}ms` }}
             >
@@ -112,7 +112,7 @@ export default function About() {
               <h2 className={styles.standardsTitle}>Global Standards & Professional Excellence</h2>
               <div className={styles.standardsLine}></div>
             </div>
-            
+
             <p className={styles.standardsText}>
               We abide by the standards issued by the Royal Institution of Chartered Surveyors (RICS) of the United Kingdom, ensuring:
             </p>
