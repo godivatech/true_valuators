@@ -316,8 +316,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 40px; /* pill shape */
-  height: 100px;
-  min-width: 260px;
+  height: 120px;
+  min-width: 300px;
   transition: var(--transition-smooth);
 }
 
@@ -337,8 +337,8 @@
 }
 
 .partnerLogoImg {
-  height: 60px;
-  max-width: 190px;
+  height: 75px;
+  max-width: 220px;
   object-fit: contain;
   filter: grayscale(100%) opacity(0.85);
   transition: var(--transition-fast);

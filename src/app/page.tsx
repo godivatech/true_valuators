@@ -26,6 +26,29 @@ const HERO_SLIDES = [
   }
 ];
 
+const PARTNER_LOGOS = [
+  {
+    name: "State Bank of India",
+    src: "/images/bank%20partners/sbi.jpg"
+  },
+  {
+    name: "Union Bank of India",
+    src: "/images/bank%20partners/union%20bank%20of%20india.png"
+  },
+  {
+    name: "Canara Bank",
+    src: "/images/bank%20partners/canara%20bank.png"
+  },
+  {
+    name: "Can Fin Homes",
+    src: "/images/bank%20partners/can%20fin%20homes%20ltd%20(canara%20bank).jpeg"
+  },
+  {
+    name: "Repco Home Finance",
+    src: "/images/bank%20partners/repco%20home%20finnace.png"
+  }
+];
+
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [formState, setFormState] = useState({
@@ -163,84 +186,30 @@ export default function Home() {
       </section>
 
       {/* 2. Partners Infinite Loop Banner */}
-      <section className={styles.partnersSection} aria-label="Partner Banks Scroll">
+      <section className={styles.partnersSection} aria-label="Our Partners">
+        <div className={`${styles.sectionHeader} scroll-reveal`}>
+          <span className={styles.sectionSubtitle}>Trusted Collaborations</span>
+          <h2 className={styles.sectionTitle}>Our Valued Partners</h2>
+          <div className={styles.sectionLine}></div>
+        </div>
+
         <div className={styles.partnersContainer}>
-          {/* Row 1: Leftward seamless infinite scroll */}
+          {/* Leftward seamless infinite scroll */}
           <div className={styles.scrollRow}>
             <div className="animate-scroll-left">
               <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper} title="State Bank of India">
-                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
-                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Canara Bank">
-                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
-                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
-                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
-                </div>
+                {PARTNER_LOGOS.map((logo, idx) => (
+                  <div key={idx} className={styles.partnerLogoWrapper} title={logo.name}>
+                    <img src={logo.src} alt={logo.name} className={styles.partnerLogoImg} />
+                  </div>
+                ))}
               </div>
               <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper} title="State Bank of India">
-                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
-                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Canara Bank">
-                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
-                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
-                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2: Rightward seamless infinite scroll */}
-          <div className={styles.scrollRow}>
-            <div className="animate-scroll-right">
-              <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
-                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
-                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Canara Bank">
-                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
-                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="State Bank of India">
-                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
-                </div>
-              </div>
-              <div className={styles.logoGroup}>
-                <div className={styles.partnerLogoWrapper} title="Repco Home Finance">
-                  <img src="/images/bank partners/repco home finnace.png" alt="Repco Home Finance" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Can Fin Homes">
-                  <img src="/images/bank partners/can fin homes ltd (canara bank).jpeg" alt="Can Fin Homes" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Canara Bank">
-                  <img src="/images/bank partners/canara bank.png" alt="Canara Bank" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="Union Bank of India">
-                  <img src="/images/bank partners/union bank of india.png" alt="Union Bank of India" className={styles.partnerLogoImg} />
-                </div>
-                <div className={styles.partnerLogoWrapper} title="State Bank of India">
-                  <img src="/images/bank partners/sbi.jpg" alt="State Bank of India" className={styles.partnerLogoImg} />
-                </div>
+                {PARTNER_LOGOS.map((logo, idx) => (
+                  <div key={`dup-${idx}`} className={styles.partnerLogoWrapper} title={logo.name}>
+                    <img src={logo.src} alt={logo.name} className={styles.partnerLogoImg} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -304,7 +273,7 @@ export default function Home() {
           <div className={`${styles.infoCol} scroll-reveal-left`}>
             <div className={styles.sectionHeader} style={{ textAlign: "left", margin: "0 0 35px 0" }}>
               <span className={styles.sectionSubtitle}>Get In Touch</span>
-              <h2 className={styles.sectionTitle}>Let's Draft Your Audit Plan</h2>
+              <h2 className={styles.sectionTitle}>Let&apos;s Draft Your Audit Plan</h2>
               <div className={styles.sectionLine} style={{ margin: "0" }}></div>
             </div>
             <p className={styles.gatewayText}>
