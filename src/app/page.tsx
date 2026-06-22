@@ -216,6 +216,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2.5 Company Overview / About Us */}
+      <section className={styles.aboutSection} aria-label="Company Overview">
+        <div className={styles.aboutGrid}>
+          <div className={`${styles.aboutContent} scroll-reveal-left`}>
+            <div className={styles.sectionHeader} style={{ textAlign: "left", margin: "0 0 35px 0" }}>
+              <span className={styles.sectionSubtitle}>Company Overview</span>
+              <h2 className={styles.sectionTitle}>About Us</h2>
+              <div className={styles.sectionLine} style={{ margin: "0" }}></div>
+            </div>
+            
+            <p className={styles.aboutText}>
+              True Valuators is a team of qualified and experienced professionals specializing in valuation services across multiple asset classes and business domains.
+            </p>
+
+            <h3 className={styles.associationTitleText}>Our professionals are associated with:</h3>
+            <ul className={styles.associationList}>
+              <li className={styles.associationItem}>
+                <div className={styles.checkmarkWrapper}>
+                  <svg className={styles.checkmarkIcon} viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                  </svg>
+                </div>
+                <span>Institution of Valuers (IOV)</span>
+              </li>
+              <li className={styles.associationItem}>
+                <div className={styles.checkmarkWrapper}>
+                  <svg className={styles.checkmarkIcon} viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                  </svg>
+                </div>
+                <span>Institution of Engineers</span>
+              </li>
+              <li className={styles.associationItem}>
+                <div className={styles.checkmarkWrapper}>
+                  <svg className={styles.checkmarkIcon} viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                  </svg>
+                </div>
+                <span>Insolvency and Bankruptcy Board of India (IBBI)</span>
+              </li>
+            </ul>
+
+            <p className={styles.aboutTextHighlight}>
+              We provide accurate, transparent, and reliable valuation solutions backed by professional expertise and industry standards.
+            </p>
+
+            <Link href="/about" className={styles.ctaButton}>
+              Read More About Us
+            </Link>
+          </div>
+
+          <div className={`${styles.aboutVisual} scroll-reveal-right`}>
+            <div className={styles.glowBackdrop}>
+              <div className={styles.glowCircle1}></div>
+              <div className={styles.glowCircle2}></div>
+            </div>
+            
+            <div className={styles.imageFrame}>
+              <img src="/images/hero section/2.png" alt="True Valuators Inspection Survey" className={styles.visualImage} />
+            </div>
+
+            <div className={styles.floatingBadge}>
+              <span className={styles.badgeValue}>10+ Years</span>
+              <span className={styles.badgeLabel}>Combined Expertise</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Bento Grid Core Values */}
       <section className={styles.valuesSection} aria-label="Our Core Values">
         <div className={`${styles.sectionHeader} scroll-reveal`}>

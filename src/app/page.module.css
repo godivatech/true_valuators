@@ -788,3 +788,253 @@
     grid-column: span 1;
   }
 }
+
+/* ==========================================================================
+   Company Overview / About Us Section
+   ========================================================================== */
+.aboutSection {
+  padding: 140px 5%;
+  background: var(--primary-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aboutText {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.aboutTextHighlight {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-weight: 500;
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 16px;
+}
+
+.associationTitleText {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.associationList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.associationItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.associationItem:hover {
+  transform: translateX(6px);
+  color: var(--accent-gold);
+}
+
+.checkmarkWrapper {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(58, 190, 249, 0.1);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.associationItem:hover .checkmarkWrapper {
+  background: var(--accent-gold);
+  color: var(--primary-surface);
+  border-color: var(--accent-gold);
+}
+
+.checkmarkIcon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.aboutVisual {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--soft-shadow);
+  z-index: 2;
+}
+
+.imageFrame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 50%, rgba(10, 17, 40, 0.3) 100%);
+  z-index: 3;
+}
+
+.visualImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.imageFrame:hover .visualImage {
+  transform: scale(1.05);
+}
+
+/* Decorative background glowing shapes */
+.glowBackdrop {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glowCircle1 {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(58, 190, 249, 0.08) 0%, transparent 70%);
+  filter: blur(20px);
+}
+
+.glowCircle2 {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(10, 17, 40, 0.03) 0%, transparent 70%);
+  filter: blur(20px);
+}
+
+/* Premium Floating Card Overlay */
+.floatingBadge {
+  position: absolute;
+  bottom: 20px;
+  left: -20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border-glow);
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: var(--soft-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 5;
+  transition: var(--transition-smooth);
+  animation: float-badge 6s ease-in-out infinite alternate;
+}
+
+.floatingBadge:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+}
+
+.badgeValue {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes float-badge {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@media (max-width: 991px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .aboutVisual {
+    height: 400px;
+  }
+  
+  .imageFrame {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .floatingBadge {
+    left: 20px;
+    bottom: -20px;
+  }
+}
