@@ -595,15 +595,10 @@ export default function About() {
             <img src="/images/Trusted Affiliations/It registered valuer.png" alt="Income Tax Valuer" className={styles.affiliationLogo} />
             <span className={styles.affiliationLabel}>Income Tax & Wealth Tax Registered Valuer</span>
           </div>
-
-          <div className={`${styles.affiliationCard} scroll-reveal`} style={{ transitionDelay: "450ms" }}>
-            <img src="/images/Trusted Affiliations/the instiution of valuers.png" alt="The Institution of Valuers Seal" className={styles.affiliationLogo} />
-            <span className={styles.affiliationLabel}>The Institution of Valuers Official Seal</span>
-          </div>
         </div>
 
         {/* Association with 3V PRO */}
-        <div className={`${styles.associationCallout} scroll-reveal`} style={{ transitionDelay: "600ms" }}>
+        <div className={`${styles.associationCallout} scroll-reveal`} style={{ transitionDelay: "450ms" }}>
           <div className={styles.associationCalloutContent}>
             <div className={styles.associationLogoWrapper}>
               <span className={styles.associationLogoText}>3V PRO</span>
