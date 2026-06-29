@@ -73,6 +73,18 @@ export default function Contact() {
                 </a>
               </div>
               <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>Mobile</span>
+                <a href="tel:+917397166426" className={styles.detailLink}>
+                  {OFFICE_CONTACTS.chennai.mobile}
+                </a>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>WhatsApp</span>
+                <a href="https://wa.me/917397166426" target="_blank" rel="noopener noreferrer" className={styles.detailLink} style={{ color: '#25D366', fontWeight: 600 }}>
+                  Chat on WhatsApp
+                </a>
+              </div>
+              <div className={styles.detailRow}>
                 <span className={styles.detailLabel}>Electronic Mail</span>
                 <a href={`mailto:${OFFICE_CONTACTS.chennai.email}`} className={styles.detailLink}>
                   {OFFICE_CONTACTS.chennai.email}
@@ -108,6 +120,18 @@ export default function Contact() {
                 <span className={styles.detailLabel}>Direct Line</span>
                 <a href={`tel:${OFFICE_CONTACTS.madurai.phone}`} className={styles.detailLink}>
                   +91 {OFFICE_CONTACTS.madurai.phone.replace("-", " ")}
+                </a>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>Mobile</span>
+                <a href="tel:+917397166426" className={styles.detailLink}>
+                  {OFFICE_CONTACTS.madurai.mobile}
+                </a>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.detailLabel}>WhatsApp</span>
+                <a href="https://wa.me/917397166426" target="_blank" rel="noopener noreferrer" className={styles.detailLink} style={{ color: '#25D366', fontWeight: 600 }}>
+                  Chat on WhatsApp
                 </a>
               </div>
               <div className={styles.detailRow}>

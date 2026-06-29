@@ -41,6 +41,12 @@ export default function Footer() {
               </a>
             </li>
             <li className={styles.addressItem}>
+              <span className={styles.addressLabel}>Mobile</span>
+              <a href="tel:+917397166426" className={styles.addressValue}>
+                {OFFICE_CONTACTS.chennai.mobile}
+              </a>
+            </li>
+            <li className={styles.addressItem}>
               <span className={styles.addressLabel}>Email</span>
               <a href={`mailto:${OFFICE_CONTACTS.chennai.email}`} className={styles.addressValue}>
                 {OFFICE_CONTACTS.chennai.email}
@@ -62,6 +68,12 @@ export default function Footer() {
               <span className={styles.addressLabel}>Phone</span>
               <a href={`tel:${OFFICE_CONTACTS.madurai.phone}`} className={styles.addressValue}>
                 {OFFICE_CONTACTS.madurai.phone}
+              </a>
+            </li>
+            <li className={styles.addressItem}>
+              <span className={styles.addressLabel}>Mobile</span>
+              <a href="tel:+917397166426" className={styles.addressValue}>
+                {OFFICE_CONTACTS.madurai.mobile}
               </a>
             </li>
             <li className={styles.addressItem}>

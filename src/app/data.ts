@@ -176,7 +176,7 @@ export const TEAM_DATA: TeamMember[] = [
   },
   {
     name: "Chiranjeevi JS",
-    role: "Chartered Engineer & Structural Consultant",
+    role: "Chartered Engineer & Asset Consultant/ Approved Government Registered Valuer",
     credentials: [
       "B.E (CIVIL), M.B.A, A.M.I.E, C.ENG, LIV",
       "Chartered Engineer (India) Registration",
@@ -266,12 +266,14 @@ export const OFFICE_CONTACTS = {
     city: "Chennai",
     address: "17/13, Easwaran Koil Street, Vellai Thottam, West Mambalam, Chennai-600 033",
     phone: "044-45837877",
+    mobile: "+91 7397 166 426",
     email: "truevaluators@gmail.com"
   },
   madurai: {
     city: "Madurai",
     address: "No.5, North Street, Singarayar Colony, Narimedu, Madurai - 625 002",
     phone: "0452-4506226",
+    mobile: "+91 7397 166 426",
     email: "valuersanjay620@gmail.com"
   }
 };

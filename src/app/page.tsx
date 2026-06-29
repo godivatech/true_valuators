@@ -364,12 +364,18 @@ export default function Home() {
             </p>
             <div className={styles.contactsList}>
               <div className={styles.contactBlock}>
-                <span className={styles.contactLabel}>Phone</span>
+                <span className={styles.contactLabel}>Phone & WhatsApp</span>
                 <a href={`tel:${OFFICE_CONTACTS.madurai.phone}`} className={styles.contactLink}>
                   +91 {OFFICE_CONTACTS.madurai.phone.replace("-", " ")} (Madurai)
                 </a>
                 <a href={`tel:${OFFICE_CONTACTS.chennai.phone}`} className={styles.contactLink}>
                   +91 {OFFICE_CONTACTS.chennai.phone.replace("-", " ")} (Chennai)
+                </a>
+                <a href="tel:+917397166426" className={styles.contactLink}>
+                  +91 7397 166 426 (Mobile)
+                </a>
+                <a href="https://wa.me/917397166426" target="_blank" rel="noopener noreferrer" className={styles.contactLink} style={{ color: '#25D366', fontWeight: 600 }}>
+                  Chat on WhatsApp
                 </a>
               </div>
               <div className={styles.contactBlock}>
