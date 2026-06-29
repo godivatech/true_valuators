@@ -104,63 +104,171 @@ export default function About() {
 
       {/* Global Standards & Professional Excellence */}
       <section className={styles.standardsSection} aria-label="Global Standards & Professional Excellence">
-        <div className={styles.standardsGrid}>
-          {/* RICS Card */}
-          <div className={`${styles.standardsCard} scroll-reveal-left`}>
-            <div className={styles.standardsHeader}>
-              <span className={styles.standardsSubtitle}>RICS Compliance</span>
-              <h2 className={styles.standardsTitle}>Global Standards & Professional Excellence</h2>
-              <div className={styles.standardsLine}></div>
+        <div className={styles.standardsContainer}>
+          <div className={styles.standardsTop}>
+            {/* Left Column: Text & Logos */}
+            <div className={`${styles.standardsLeft} scroll-reveal-left`}>
+              <div className={styles.standardsHeader}>
+                <span className={styles.standardsSubtitle}>RICS Compliance</span>
+                <div className={styles.standardsSubtitleLine}></div>
+              </div>
+
+              <h2 className={styles.standardsTitle}>
+                Global Standards.<br />
+                <span className={styles.goldText}>Professional Excellence.</span>
+              </h2>
+
+              <p className={styles.standardsText}>
+                We abide by the standards issued by the Royal Institution of Chartered Surveyors (RICS), ensuring the highest level of professionalism and integrity in every valuation we deliver.
+              </p>
+
+              <div className={styles.logoGroup}>
+                <div className={styles.ricsLogoWrapper}>
+                  <img src="/images/rics-logo.svg" alt="RICS Logo" className={styles.ricsLogoImg} />
+                  <div className={styles.regulatedBadge}>Regulated by RICS</div>
+                </div>
+                <div className={styles.logoDivider}></div>
+                <div className={styles.logoTextWrapper}>
+                  <span className={styles.logoTextTitle}>Royal Institution of</span>
+                  <span className={styles.logoTextTitle}>Chartered Surveyors</span>
+                </div>
+              </div>
             </div>
 
-            <p className={styles.standardsText}>
-              We abide by the standards issued by the Royal Institution of Chartered Surveyors (RICS) of the United Kingdom, ensuring:
-            </p>
+            {/* Right Column: Building Image & Badge */}
+            <div className={`${styles.standardsRight} scroll-reveal-right`}>
+              <div className={styles.buildingImageWrapper}>
+                {/* Desktop SVG Curve (Deep S-Curve) */}
+                <svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" className={`${styles.buildingSvg} ${styles.desktopSvg}`}>
+                  <defs>
+                    <clipPath id="buildingClip" clipPathUnits="objectBoundingBox">
+                      <path d="M 1,0 L 0.25,0 C -0.15,0.35 0.15,0.75 0.55,1 L 1,1 Z" />
+                    </clipPath>
+                  </defs>
+                  <image
+                    href="/images/rics_building.png"
+                    width="100"
+                    height="100"
+                    preserveAspectRatio="xMidYMid slice"
+                    clipPath="url(#buildingClip)"
+                  />
+                  <path
+                    d="M 25,0 C -15,35 15,75 55,100"
+                    fill="none"
+                    stroke="var(--design-gold)"
+                    strokeWidth="2"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
 
-            <ul className={styles.standardsList}>
-              <li className={styles.standardsItem}>
-                <div className={styles.standardsCheck}>✓</div>
-                <span>International valuation standards</span>
-              </li>
-              <li className={styles.standardsItem}>
-                <div className={styles.standardsCheck}>✓</div>
-                <span>Ethical and transparent practices</span>
-              </li>
-              <li className={styles.standardsItem}>
-                <div className={styles.standardsCheck}>✓</div>
-                <span>Accurate and unbiased reporting</span>
-              </li>
-              <li className={styles.standardsItem}>
-                <div className={styles.standardsCheck}>✓</div>
-                <span>Reliable and compliant valuation services</span>
-              </li>
-            </ul>
+                {/* Mobile SVG (No Curve, Full Width for Mobile) */}
+                <svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" className={`${styles.buildingSvg} ${styles.mobileSvg}`}>
+                  <image
+                    href="/images/rics_building.png"
+                    width="100"
+                    height="100"
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </svg>
+
+                {/* Overlapping circular Badge */}
+                <div className={styles.badgeContainer}>
+                  <svg viewBox="0 0 160 160" className={styles.badgeSvg}>
+                    {/* Dark Background */}
+                    <circle cx="80" cy="80" r="72" className={styles.badgeBg} />
+                    {/* Inner gold circle */}
+                    <circle cx="80" cy="80" r="54" className={styles.badgeInnerCircle} />
+
+                    {/* Paths for text */}
+                    <path id="topTextPath" d="M 22,80 A 58,58 0 0,1 138,80" fill="none" />
+                    <path id="bottomTextPath" d="M 22,80 A 58,58 0 0,0 138,80" fill="none" />
+
+                    {/* Circular Text */}
+                    <text className={styles.badgeText}>
+                      <textPath href="#topTextPath" startOffset="50%" textAnchor="middle">
+                        RICS STANDARDS
+                      </textPath>
+                    </text>
+                    <text className={`${styles.badgeText} ${styles.badgeTextBottom}`}>
+                      <textPath href="#bottomTextPath" startOffset="50%" textAnchor="middle">
+                        TRUSTED • ETHICAL • PROFESSIONAL
+                      </textPath>
+                    </text>
+
+                    {/* Center Checkmark in Circle */}
+                    <g transform="translate(68, 68)">
+                      <circle cx="12" cy="12" r="10" className={styles.badgeCenterCircle} />
+                      <path d="M8 12l3 3 5-5" fill="none" stroke="var(--accent-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Expertise List Card */}
-          <div className={`${styles.expertiseCard} scroll-reveal-right`}>
-            <h3 className={styles.expertiseHeader}>Our expertise spans across:</h3>
-            <div className={styles.expertiseGrid}>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseNum}>01</span>
-                <span className={styles.expertiseText}>Real Estate Valuation</span>
+          {/* Bottom Card: 4 Columns Checklist */}
+          <div className={`${styles.checklistContainer} scroll-reveal`}>
+            <div className={styles.checklistGrid}>
+
+              {/* Item 1 */}
+              <div className={styles.checklistCard}>
+                <div className={styles.checklistIconWrapper}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    <path d="M2 12h20" />
+                  </svg>
+                </div>
+                <h3 className={styles.checklistTitle}>International Valuation Standards</h3>
+                <p className={styles.checklistDescription}>Aligned with globally recognized valuation principles and frameworks.</p>
               </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseNum}>02</span>
-                <span className={styles.expertiseText}>Industrial Assets</span>
+
+              {/* Item 2 */}
+              <div className={styles.checklistCard}>
+                <div className={styles.checklistIconWrapper}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 16c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2" />
+                    <path d="M12 3v15" />
+                    <path d="M12 18H3" />
+                    <path d="M12 18h9" />
+                    <path d="M3 7h18" />
+                    <path d="M6 7l-2 6h4l-2-6z" />
+                    <path d="M18 7l-2 6h4l-2-6z" />
+                  </svg>
+                </div>
+                <h3 className={styles.checklistTitle}>Ethical & Transparent Practices</h3>
+                <p className={styles.checklistDescription}>We uphold the highest standards of ethics, integrity and transparency.</p>
               </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseNum}>03</span>
-                <span className={styles.expertiseText}>Machinery & Equipment</span>
+
+              {/* Item 3 */}
+              <div className={styles.checklistCard}>
+                <div className={styles.checklistIconWrapper}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                    <path d="M12 2v4" />
+                    <path d="M12 18v4" />
+                    <path d="M2 12h4" />
+                    <path d="M18 12h4" />
+                  </svg>
+                </div>
+                <h3 className={styles.checklistTitle}>Accurate & Unbiased Reporting</h3>
+                <p className={styles.checklistDescription}>Delivering factual, clear and impartial reports you can depend on.</p>
               </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseNum}>04</span>
-                <span className={styles.expertiseText}>Financial Assets</span>
+
+              {/* Item 4 */}
+              <div className={styles.checklistCard}>
+                <div className={styles.checklistIconWrapper}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="M9 11l2 2 4-4" />
+                  </svg>
+                </div>
+                <h3 className={styles.checklistTitle}>Reliable & Compliant Services</h3>
+                <p className={styles.checklistDescription}>Our services are consistent, reliable and fully compliant with RICS requirements.</p>
               </div>
-              <div className={styles.expertiseItem}>
-                <span className={styles.expertiseNum}>05</span>
-                <span className={styles.expertiseText}>Business Valuation</span>
-              </div>
+
             </div>
           </div>
         </div>
