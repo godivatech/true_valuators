@@ -251,28 +251,44 @@ export default function About() {
             {/* Left Column: Text & Logos */}
             <div className={`${styles.standardsLeft} scroll-reveal-left`}>
               <div className={styles.standardsHeader}>
-                <span className={styles.standardsSubtitle}>RICS Compliance</span>
+                <span className={styles.standardsSubtitle}>RICS & IBBI Compliance</span>
                 <div className={styles.standardsSubtitleLine}></div>
               </div>
 
               <h2 className={styles.standardsTitle}>
-                Global Standards.<br />
+                Global & Statutory Standards.<br />
                 <span className={styles.goldText}>Professional Excellence.</span>
               </h2>
 
               <p className={styles.standardsText}>
-                We abide by the standards issued by the Royal Institution of Chartered Surveyors (RICS), ensuring the highest level of professionalism and integrity in every valuation we deliver.
+                We strictly abide by the global valuation standards of the Royal Institution of Chartered Surveyors (RICS) and the national statutory regulations of the Insolvency and Bankruptcy Board of India (IBBI), ensuring the highest level of regulatory compliance, professionalism, and integrity in every valuation we deliver.
               </p>
 
-              <div className={styles.logoGroup}>
-                <div className={styles.ricsLogoWrapper}>
-                  <img src="/images/rics-logo.svg" alt="RICS Logo" className={styles.ricsLogoImg} />
-                  <div className={styles.regulatedBadge}>Regulated by RICS</div>
+              <div className={styles.complianceRow}>
+                {/* RICS Block */}
+                <div className={styles.complianceBlock}>
+                  <div className={styles.complianceLogoWrapper}>
+                    <img src="/images/rics-logo.svg" alt="RICS Logo" className={styles.ricsLogoImg} />
+                    <div className={styles.regulatedBadge}>Regulated by RICS</div>
+                  </div>
+                  <div className={styles.logoDivider}></div>
+                  <div className={styles.logoTextWrapper}>
+                    <span className={styles.logoTextTitle}>Royal Institution of</span>
+                    <span className={styles.logoTextTitle}>Chartered Surveyors</span>
+                  </div>
                 </div>
-                <div className={styles.logoDivider}></div>
-                <div className={styles.logoTextWrapper}>
-                  <span className={styles.logoTextTitle}>Royal Institution of</span>
-                  <span className={styles.logoTextTitle}>Chartered Surveyors</span>
+
+                {/* IBBI Block */}
+                <div className={styles.complianceBlock}>
+                  <div className={styles.complianceLogoWrapper}>
+                    <div className={styles.ibbiLogoText}>IBBI</div>
+                    <div className={styles.ibbiBadge}>IBBI Compliant</div>
+                  </div>
+                  <div className={styles.logoDivider}></div>
+                  <div className={styles.logoTextWrapper}>
+                    <span className={styles.logoTextTitle}>Insolvency & Bankruptcy</span>
+                    <span className={styles.logoTextTitle}>Board of India</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -293,6 +309,15 @@ export default function About() {
                     height="100"
                     preserveAspectRatio="xMidYMid slice"
                     clipPath="url(#buildingClip)"
+                    className={styles.standardsImage1}
+                  />
+                  <image
+                    href="/images/ibbi_building.png"
+                    width="100"
+                    height="100"
+                    preserveAspectRatio="xMidYMid slice"
+                    clipPath="url(#buildingClip)"
+                    className={styles.standardsImage2}
                   />
                   <path
                     d="M 25,0 C -15,35 15,75 55,100"
@@ -310,6 +335,14 @@ export default function About() {
                     width="100"
                     height="100"
                     preserveAspectRatio="xMidYMid slice"
+                    className={styles.standardsImage1}
+                  />
+                  <image
+                    href="/images/ibbi_building.png"
+                    width="100"
+                    height="100"
+                    preserveAspectRatio="xMidYMid slice"
+                    className={styles.standardsImage2}
                   />
                 </svg>
 
@@ -328,12 +361,12 @@ export default function About() {
                     {/* Circular Text */}
                     <text className={styles.badgeText}>
                       <textPath href="#topTextPath" startOffset="50%" textAnchor="middle">
-                        RICS STANDARDS
+                        RICS & IBBI
                       </textPath>
                     </text>
                     <text className={`${styles.badgeText} ${styles.badgeTextBottom}`}>
                       <textPath href="#bottomTextPath" startOffset="50%" textAnchor="middle">
-                        TRUSTED • ETHICAL • PROFESSIONAL
+                        TRUSTED • ETHICAL • COMPLIANT
                       </textPath>
                     </text>
 
@@ -408,7 +441,7 @@ export default function About() {
                   </svg>
                 </div>
                 <h3 className={styles.checklistTitle}>Reliable & Compliant Services</h3>
-                <p className={styles.checklistDescription}>Our services are consistent, reliable and fully compliant with RICS requirements.</p>
+                <p className={styles.checklistDescription}>Our services are consistent, reliable and fully compliant with RICS & IBBI requirements.</p>
               </div>
 
             </div>

@@ -569,11 +569,27 @@
   max-width: 540px;
 }
 
-.logoGroup {
+.complianceRow {
   display: flex;
   align-items: center;
-  gap: 32px;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 48px;
+  margin-top: 25px;
+}
+
+.complianceBlock {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.complianceLogoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 140px;
+  flex-shrink: 0;
 }
 
 .ricsLogoWrapper {
@@ -591,12 +607,39 @@
   display: block;
 }
 
+.ibbiLogoText {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--brand-navy);
+  letter-spacing: 1.5px;
+  line-height: 1;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .regulatedBadge {
   font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 700;
   color: #FFFFFF;
   background: var(--brand-navy);
+  padding: 5px 12px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ibbiBadge {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: var(--accent-gold);
   padding: 5px 12px;
   border-radius: 5px;
   text-transform: uppercase;
@@ -665,6 +708,26 @@
 
 .mobileSvg {
   display: none;
+}
+
+.standardsImage1 {
+  animation: standardsFade1 12s infinite ease-in-out;
+}
+
+.standardsImage2 {
+  animation: standardsFade2 12s infinite ease-in-out;
+}
+
+@keyframes standardsFade1 {
+  0%, 40% { opacity: 1; }
+  48%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes standardsFade2 {
+  0%, 40% { opacity: 0; }
+  48%, 92% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .badgeContainer {
@@ -869,6 +932,16 @@
   }
   .logoTextTitle {
     font-size: 13px;
+  }
+  .ibbiWrapper {
+    max-width: 130px;
+  }
+  .ibbiBadge {
+    font-size: 8px;
+    padding: 3px 8px;
+  }
+  .ibbiText {
+    font-size: 11px;
   }
 }
 
