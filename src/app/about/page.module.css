@@ -282,59 +282,98 @@
   background: var(--primary-surface);
   border: 1px solid var(--glass-border);
   padding: 50px 40px;
-  border-radius: 8px;
+  border-radius: 20px;
   text-align: center;
   transition: var(--transition-smooth);
-  box-shadow: var(--soft-shadow);
+  box-shadow: 0 10px 30px rgba(10, 110, 240, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.mvaCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  transition: var(--transition-smooth);
 }
 
 .mvaCard:hover {
   border-color: var(--accent-gold);
-  transform: translateY(-5px);
-  box-shadow: var(--hover-shadow);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(58, 190, 249, 0.12);
+}
+
+.mvaCard:hover::before {
+  background: var(--accent-gold);
 }
 
 .mvaIconBox {
-  width: 70px;
-  height: 70px;
-  background: rgba(58, 190, 249, 0.1);
-  border: 1px solid var(--accent-gold-glow);
+  width: 76px;
+  height: 76px;
+  background: rgba(58, 190, 249, 0.06);
+  border: 1px solid var(--glass-border);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 30px auto;
   transition: var(--transition-smooth);
+  box-shadow: 0 8px 20px rgba(58, 190, 249, 0.06);
 }
 
 .mvaCard:hover .mvaIconBox {
   background: var(--accent-gold);
-  color: var(--primary-darker);
+  color: var(--primary-surface);
+  box-shadow: 0 12px 25px var(--accent-gold-glow);
+  transform: rotateY(360deg);
 }
 
 .mvaIconSvg {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   fill: var(--accent-gold);
   transition: var(--transition-smooth);
 }
 
 .mvaCard:hover .mvaIconSvg {
-  fill: var(--primary-darker);
+  fill: var(--brand-white);
 }
 
 .mvaTitle {
   font-family: var(--font-serif);
   font-size: 24px;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 20px;
+  position: relative;
+}
+
+.mvaTitle::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 2.5px;
+  background: rgba(58, 190, 249, 0.3);
+  margin: 12px auto 0 auto;
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.mvaCard:hover .mvaTitle::after {
+  width: 60px;
+  background: var(--accent-gold);
 }
 
 .mvaText {
   font-family: var(--font-sans);
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--text-muted);
+  text-align: justify;
 }
 
 /* ==========================================================================
