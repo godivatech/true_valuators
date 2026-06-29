@@ -41,8 +41,8 @@ export default function Footer() {
               </a>
             </li>
             <li className={styles.addressItem}>
-              <span className={styles.addressLabel}>Mobile</span>
-              <a href="tel:+917397166426" className={styles.addressValue}>
+              <span className={styles.addressLabel}>Mobile / WhatsApp</span>
+              <a href="https://wa.me/917397166426" target="_blank" rel="noopener noreferrer" className={styles.addressValue}>
                 {OFFICE_CONTACTS.chennai.mobile}
               </a>
             </li>
@@ -71,8 +71,8 @@ export default function Footer() {
               </a>
             </li>
             <li className={styles.addressItem}>
-              <span className={styles.addressLabel}>Mobile</span>
-              <a href="tel:+917397166426" className={styles.addressValue}>
+              <span className={styles.addressLabel}>Mobile / WhatsApp</span>
+              <a href="https://wa.me/917397166426" target="_blank" rel="noopener noreferrer" className={styles.addressValue}>
                 {OFFICE_CONTACTS.madurai.mobile}
               </a>
             </li>
