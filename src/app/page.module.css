@@ -344,6 +344,11 @@
   transition: var(--transition-fast);
 }
 
+.realTouchLogo {
+  clip-path: inset(18% 0 0 0);
+  transform: scale(1.22);
+}
+
 .partnerLogoWrapper:hover .partnerLogoImg {
   filter: none;
   opacity: 1;

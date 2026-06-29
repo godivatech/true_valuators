@@ -198,18 +198,32 @@ export default function Home() {
           <div className={styles.scrollRow}>
             <div className="animate-scroll-left">
               <div className={styles.logoGroup}>
-                {PARTNER_LOGOS.map((logo, idx) => (
-                  <div key={idx} className={styles.partnerLogoWrapper} title={logo.name}>
-                    <img src={logo.src} alt={logo.name} className={styles.partnerLogoImg} />
-                  </div>
-                ))}
+                {PARTNER_LOGOS.map((logo, idx) => {
+                  const isRealTouch = logo.name === "Real Touch Finance";
+                  return (
+                    <div key={idx} className={styles.partnerLogoWrapper} title={logo.name}>
+                      <img 
+                        src={logo.src} 
+                        alt={logo.name} 
+                        className={`${styles.partnerLogoImg} ${isRealTouch ? styles.realTouchLogo : ""}`} 
+                      />
+                    </div>
+                  );
+                })}
               </div>
               <div className={styles.logoGroup}>
-                {PARTNER_LOGOS.map((logo, idx) => (
-                  <div key={`dup-${idx}`} className={styles.partnerLogoWrapper} title={logo.name}>
-                    <img src={logo.src} alt={logo.name} className={styles.partnerLogoImg} />
-                  </div>
-                ))}
+                {PARTNER_LOGOS.map((logo, idx) => {
+                  const isRealTouch = logo.name === "Real Touch Finance";
+                  return (
+                    <div key={`dup-${idx}`} className={styles.partnerLogoWrapper} title={logo.name}>
+                      <img 
+                        src={logo.src} 
+                        alt={logo.name} 
+                        className={`${styles.partnerLogoImg} ${isRealTouch ? styles.realTouchLogo : ""}`} 
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
