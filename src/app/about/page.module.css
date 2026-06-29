@@ -926,3 +926,164 @@
     gap: 20px;
   }
 }
+
+/* ==========================================================================
+   Why Choose Us Section
+   ========================================================================== */
+.whyChooseSection {
+  padding: 100px 5%;
+  background: var(--primary-darker);
+  position: relative;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.whyChooseHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.whyChooseGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.whyChooseCard {
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  padding: 35px 25px;
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+  box-shadow: var(--soft-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.whyChooseCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.whyChooseIconWrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(212, 163, 89, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  margin-bottom: 20px;
+  transition: var(--transition-smooth);
+}
+
+.whyChooseCard:hover .whyChooseIconWrapper {
+  background: var(--accent-gold);
+  color: var(--primary-darker);
+}
+
+.whyChooseIconWrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.whyChooseCardTitle {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.whyChooseCardText {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Our Commitment Banner */
+.commitmentBanner {
+  max-width: 1000px;
+  margin: 80px auto 0 auto;
+  background: linear-gradient(135deg, rgba(212, 163, 89, 0.08) 0%, rgba(10, 17, 40, 0.4) 100%);
+  border: 1px solid rgba(212, 163, 89, 0.2);
+  border-radius: 16px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.commitmentQuoteMark {
+  font-family: var(--font-serif);
+  font-size: 90px;
+  color: rgba(212, 163, 89, 0.15);
+  line-height: 0.8;
+  user-select: none;
+  font-weight: 900;
+}
+
+.commitmentContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.commitmentSubtitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.commitmentText {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.5vw, 22px);
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .whyChooseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .commitmentBanner {
+    padding: 40px;
+    gap: 15px;
+  }
+  .commitmentQuoteMark {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .whyChooseGrid {
+    grid-template-columns: 1fr;
+  }
+  .commitmentBanner {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 10px;
+  }
+  .commitmentQuoteMark {
+    display: none;
+  }
+}
+

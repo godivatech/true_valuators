@@ -16,7 +16,7 @@
   --color-text: var(--brand-navy);
 
   /* Primary Layout Colors */
-  --primary-dark: #EBF8FF;       /* Clean Ice Blue-Grey Surface (Azure tinted) */
+  --primary-dark: #F4F9FD;       /* Clean Ice Blue-Grey Surface (Azure tinted) */
   --primary-surface: var(--brand-white);   /* Crisp White Card/Navigation block */
   --primary-darker: var(--brand-muted);    /* Soft Light White Backdrop */
   

@@ -277,3 +277,60 @@ export const OFFICE_CONTACTS = {
     email: "valuersanjay620@gmail.com"
   }
 };
+
+export interface WhyChooseUsCard {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const WHY_CHOOSE_US_DATA: WhyChooseUsCard[] = [
+  {
+    title: "Qualified and Experienced Valuers",
+    description: "Our team consists of professionally qualified and experienced valuers with extensive knowledge of residential, commercial, industrial, and land properties.",
+    icon: "users"
+  },
+  {
+    title: "Accurate and Reliable Valuations",
+    description: "We provide objective, transparent, and market-driven valuation reports based on established valuation standards and methodologies.",
+    icon: "target"
+  },
+  {
+    title: "Comprehensive Property Assessment",
+    description: "We conduct detailed site inspections, document verification, market analysis, and technical evaluation to ensure precise valuation.",
+    icon: "search"
+  },
+  {
+    title: "Compliance with Regulatory Standards",
+    description: "Our valuation reports comply with applicable statutory, banking, and professional valuation guidelines.",
+    icon: "shield"
+  },
+  {
+    title: "Timely Service Delivery",
+    description: "We understand the importance of deadlines and ensure prompt inspection, analysis, and submission of valuation reports.",
+    icon: "clock"
+  },
+  {
+    title: "Strong Market Knowledge",
+    description: "Our in-depth understanding of local real estate markets enables us to provide realistic and dependable property valuations.",
+    icon: "trending"
+  },
+  {
+    title: "Advanced Methodologies and Technology",
+    description: "We utilize modern valuation techniques, market databases, and analytical tools to enhance accuracy and consistency.",
+    icon: "cpu"
+  },
+  {
+    title: "Independent and Ethical Approach",
+    description: "We maintain the highest standards of integrity, confidentiality, and professional ethics in every assignment.",
+    icon: "lock"
+  },
+  {
+    title: "Customized Valuation Solutions",
+    description: "We offer valuation services tailored to various purposes, including bank finance, sale and purchase, taxation, insurance, legal matters, and financial reporting.",
+    icon: "briefcase"
+  }
+];
+
+export const OUR_COMMITMENT = "Delivering accurate, reliable, and professional property valuation services with integrity, expertise, and timely execution.";
+

@@ -2,9 +2,98 @@
 
 import Link from "next/link";
 import styles from "./page.module.css";
-import { TEAM_DATA } from "../data";
+import { TEAM_DATA, WHY_CHOOSE_US_DATA, OUR_COMMITMENT } from "../data";
 
 export default function About() {
+  const renderIcon = (icon: string) => {
+    switch (icon) {
+      case "users":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        );
+      case "target":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" />
+          </svg>
+        );
+      case "search":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        );
+      case "shield":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        );
+      case "clock":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        );
+      case "trending":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+            <polyline points="17 6 23 6 23 12" />
+          </svg>
+        );
+      case "cpu":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+            <rect x="9" y="9" width="6" height="6" />
+            <line x1="9" y1="1" x2="9" y2="4" />
+            <line x1="15" y1="1" x2="15" y2="4" />
+            <line x1="9" y1="20" x2="9" y2="23" />
+            <line x1="15" y1="20" x2="15" y2="23" />
+            <line x1="20" y1="9" x2="23" y2="9" />
+            <line x1="20" y1="15" x2="23" y2="15" />
+            <line x1="1" y1="9" x2="4" y2="9" />
+            <line x1="1" y1="15" x2="4" y2="15" />
+          </svg>
+        );
+      case "lock":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+        );
+      case "briefcase":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+          </svg>
+        );
+      case "smile":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+            <line x1="9" y1="9" x2="9.01" y2="9" />
+            <line x1="15" y1="9" x2="15.01" y2="9" />
+          </svg>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className={styles.main}>
       {/* Page Hero */}
@@ -16,48 +105,6 @@ export default function About() {
           <Link href="/" className={styles.breadcrumbLink}>Home</Link>
           <span className={styles.breadcrumbSeparator}>/</span>
           <span>About</span>
-        </div>
-      </section>
-
-      {/* Team Profiles */}
-      <section className={styles.teamSection} aria-label="Our Directors & Consultants">
-        <div className={`${styles.teamIntro} scroll-reveal`}>
-          <h2 className={styles.introTitle}>Meet Our Leadership</h2>
-          <p className={styles.introText}>
-            True Valuators comprises a highly certified core team of engineers, financial analysts, and government-registered surveyors. We abide by strict regulatory and professional codes, serving banking firms, public corporations, and private portfolios across the nation.
-          </p>
-        </div>
-
-        <div className={styles.teamGrid}>
-          {TEAM_DATA.map((member, idx) => (
-            <div
-              key={idx}
-              className={`${styles.profileCard} scroll-reveal`}
-              style={{ transitionDelay: `${idx * 200}ms` }}
-            >
-              <div className={styles.profileImageWrapper}>
-                {member.image ? (
-                  <img src={member.image} alt={member.name} className={styles.profileImage} />
-                ) : (
-                  <div className={styles.avatarPlaceholder}>
-                    {member.name.split(" ").map(n => n[0]).join("")}
-                  </div>
-                )}
-              </div>
-              <div className={styles.profileContent}>
-                <h3 className={styles.memberName}>{member.name}</h3>
-                <span className={styles.memberRole}>{member.role}</span>
-                <span className={styles.credentialsTitle}>Accredited Credentials</span>
-                <ul className={styles.credentialsList}>
-                  {member.credentials.map((cred, cIdx) => (
-                    <li key={cIdx} className={styles.credentialItem}>
-                      {cred}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -271,6 +318,85 @@ export default function About() {
 
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className={styles.whyChooseSection} aria-label="Why Choose Us for Property Valuation">
+        <div className={`${styles.whyChooseHeader} scroll-reveal`}>
+          <span className={styles.standardsSubtitle}>Our Strengths</span>
+          <h2 className={styles.standardsTitle} style={{ textAlign: "center", margin: "15px 0 0 0" }}>Why Choose Us for Property Valuation</h2>
+          <div style={{ width: "80px", height: "2.5px", backgroundColor: "var(--accent-gold)", margin: "20px auto 0 auto" }}></div>
+        </div>
+
+        <div className={styles.whyChooseGrid}>
+          {WHY_CHOOSE_US_DATA.map((item, idx) => (
+            <div
+              key={idx}
+              className={`${styles.whyChooseCard} scroll-reveal`}
+              style={{ transitionDelay: `${(idx % 3) * 100}ms` }}
+            >
+              <div className={styles.whyChooseIconWrapper}>
+                {renderIcon(item.icon)}
+              </div>
+              <h3 className={styles.whyChooseCardTitle}>{item.title}</h3>
+              <p className={styles.whyChooseCardText}>{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Our Commitment Banner */}
+        <div className={`${styles.commitmentBanner} scroll-reveal`}>
+          <div className={styles.commitmentQuoteMark}>“</div>
+          <div className={styles.commitmentContent}>
+            <span className={styles.commitmentSubtitle}>Our Commitment</span>
+            <blockquote className={styles.commitmentText}>
+              &ldquo;{OUR_COMMITMENT}&rdquo;
+            </blockquote>
+          </div>
+          <div className={styles.commitmentQuoteMark} style={{ alignSelf: "flex-end", transform: "rotate(180deg)" }}>“</div>
+        </div>
+      </section>
+
+      {/* Team Profiles */}
+      <section className={styles.teamSection} aria-label="Our Directors & Consultants">
+        <div className={`${styles.teamIntro} scroll-reveal`}>
+          <h2 className={styles.introTitle}>Meet Our Leadership</h2>
+          <p className={styles.introText}>
+            True Valuators comprises a highly certified core team of engineers, financial analysts, and government-registered surveyors. We abide by strict regulatory and professional codes, serving banking firms, public corporations, and private portfolios across the nation.
+          </p>
+        </div>
+
+        <div className={styles.teamGrid}>
+          {TEAM_DATA.map((member, idx) => (
+            <div
+              key={idx}
+              className={`${styles.profileCard} scroll-reveal`}
+              style={{ transitionDelay: `${idx * 200}ms` }}
+            >
+              <div className={styles.profileImageWrapper}>
+                {member.image ? (
+                  <img src={member.image} alt={member.name} className={styles.profileImage} />
+                ) : (
+                  <div className={styles.avatarPlaceholder}>
+                    {member.name.split(" ").map(n => n[0]).join("")}
+                  </div>
+                )}
+              </div>
+              <div className={styles.profileContent}>
+                <h3 className={styles.memberName}>{member.name}</h3>
+                <span className={styles.memberRole}>{member.role}</span>
+                <span className={styles.credentialsTitle}>Accredited Credentials</span>
+                <ul className={styles.credentialsList}>
+                  {member.credentials.map((cred, cIdx) => (
+                    <li key={cIdx} className={styles.credentialItem}>
+                      {cred}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
