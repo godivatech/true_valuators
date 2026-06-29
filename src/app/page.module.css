@@ -878,6 +878,7 @@
   line-height: 1.8;
   color: var(--text-muted);
   margin-bottom: 24px;
+  text-align: justify;
 }
 
 .aboutTextHighlight {
@@ -889,6 +890,7 @@
   font-weight: 500;
   border-left: 3px solid var(--accent-gold);
   padding-left: 16px;
+  text-align: justify;
 }
 
 .associationTitleText {
