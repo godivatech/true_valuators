@@ -40,8 +40,8 @@ const PARTNER_LOGOS = [
     src: "/images/bank%20partners/canara%20bank.png"
   },
   {
-    name: "Can Fin Homes",
-    src: "/images/bank%20partners/can%20fin%20homes%20ltd%20(canara%20bank).jpeg"
+    name: "Real Touch Finance",
+    src: "/images/bank%20partners/Real%20touch%20finance.jpeg"
   },
   {
     name: "Repco Home Finance",
