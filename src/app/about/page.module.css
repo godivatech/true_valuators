@@ -1127,3 +1127,239 @@
   }
 }
 
+/* ==========================================================================
+   Our Valuation Process Section
+   ========================================================================== */
+.processSection {
+  padding: 120px 5%;
+  background: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.processHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.processContainer {
+  width: 1200px;
+  height: 470px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.processRow {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 175px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.processRow:first-of-type {
+  top: 0;
+}
+
+.processRow:last-of-type {
+  bottom: 0;
+}
+
+.processCard {
+  width: 175px;
+  height: 175px;
+  background: var(--primary-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-smooth);
+  box-shadow: 0 8px 25px rgba(10, 110, 240, 0.02);
+  z-index: 2;
+}
+
+.processCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: var(--transition-smooth);
+}
+
+.processCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(58, 190, 249, 0.1);
+}
+
+.processCard:hover::before {
+  background: var(--accent-gold);
+}
+
+.stepBadge {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-gold);
+  color: var(--brand-white);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(212, 163, 89, 0.25);
+  transition: var(--transition-smooth);
+  z-index: 3;
+}
+
+.processCard:hover .stepBadge {
+  background: var(--cta-peach);
+  box-shadow: 0 4px 12px rgba(226, 126, 54, 0.35);
+}
+
+.processIconWrapper {
+  color: var(--accent-gold);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: var(--transition-smooth);
+}
+
+.processCard:hover .processIconWrapper {
+  transform: scale(1.1);
+  color: var(--accent-gold-light);
+}
+
+.processIconWrapper svg {
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+}
+
+.processStepTitle {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin: 0;
+  transition: var(--transition-smooth);
+}
+
+.processCard:hover .processStepTitle {
+  color: var(--accent-gold);
+}
+
+.processSvgConnector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.processSvgConnector path {
+  stroke: #3abeF9;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+}
+
+/* Responsive styles for Process */
+@media (max-width: 1200px) {
+  .processContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px; /* space to accommodate down arrow */
+    padding-bottom: 20px;
+  }
+  .processRow {
+    display: contents;
+  }
+  .processCard {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .processCard::after {
+    content: "↓";
+    position: absolute;
+    bottom: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #3abeF9;
+    font-size: 24px;
+    display: block;
+    animation: bounceVertical 2s infinite ease-in-out;
+    z-index: 3;
+  }
+  .processRow:last-of-type .processCard:last-of-type::after {
+    display: none !important;
+  }
+  .processSvgConnector {
+    display: none;
+  }
+}
+
+@keyframes bounceVertical {
+  0%, 100% {
+    transform: translate(-50%, 0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, 6px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .processSection {
+    padding: 80px 5%;
+  }
+  .processContainer {
+    gap: 50px;
+  }
+  .processCard {
+    width: 145px;
+    height: 145px;
+    padding: 15px 10px;
+  }
+  .processIconWrapper {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+  .processIconWrapper svg {
+    width: 26px;
+    height: 26px;
+  }
+  .processStepTitle {
+    font-size: 11.5px;
+  }
+}
+

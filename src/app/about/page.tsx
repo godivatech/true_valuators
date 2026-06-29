@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "./page.module.css";
-import { TEAM_DATA, WHY_CHOOSE_US_DATA, OUR_COMMITMENT } from "../data";
+import { TEAM_DATA, WHY_CHOOSE_US_DATA, OUR_COMMITMENT, VALUATION_PROCESS_DATA } from "../data";
 
 export default function About() {
   const renderIcon = (icon: string) => {
@@ -87,6 +87,101 @@ export default function About() {
             <path d="M8 14s1.5 2 4 2 4-2 4-2" />
             <line x1="9" y1="9" x2="9.01" y2="9" />
             <line x1="15" y1="9" x2="15.01" y2="9" />
+          </svg>
+        );
+      default:
+        return null;
+    }
+  };
+
+  const renderProcessIcon = (icon: string) => {
+    switch (icon) {
+      case "user":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        );
+      case "handshake":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v3" />
+            <path d="M14 10V5a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5" />
+            <path d="M10 10V7a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v9a4 4 0 0 0 4 4h4" />
+            <path d="M6 20h12a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-3" />
+          </svg>
+        );
+      case "folder":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+          </svg>
+        );
+      case "inspection":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 21V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16" />
+            <path d="M8 21v-4a2 2 0 0 1 2-2h4" />
+            <circle cx="17" cy="13" r="3" />
+            <path d="M19.5 15.5L22 18" />
+            <path d="M6 7h4M6 11h4" />
+          </svg>
+        );
+      case "chart":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+            <path d="M3 20h18" />
+          </svg>
+        );
+      case "shield-check":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="M9 11l2 2 4-4" />
+          </svg>
+        );
+      case "scale":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" y1="3" x2="12" y2="21" />
+            <line x1="12" y1="21" x2="8" y2="21" />
+            <line x1="12" y1="21" x2="16" y2="21" />
+            <line x1="5" y1="7" x2="19" y2="7" />
+            <path d="M5 7l3 6M19 7l-3 6" />
+            <path d="M8 13h2M14 13h2" />
+          </svg>
+        );
+      case "calculator":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+            <line x1="8" y1="6" x2="16" y2="6" />
+            <line x1="16" y1="14" x2="16" y2="18" />
+            <line x1="12" y1="14" x2="12" y2="18" />
+            <line x1="8" y1="14" x2="8" y2="18" />
+            <line x1="16" y1="10" x2="16" y2="10.01" />
+            <line x1="12" y1="10" x2="12" y2="10.01" />
+            <line x1="8" y1="10" x2="8" y2="10.01" />
+          </svg>
+        );
+      case "document":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+          </svg>
+        );
+      case "award":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="8" r="7" />
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
           </svg>
         );
       default:
@@ -317,6 +412,83 @@ export default function About() {
               </div>
 
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Valuation Process Section */}
+      <section className={styles.processSection} aria-label="Our Valuation Process">
+        <div className={`${styles.processHeader} scroll-reveal`}>
+          <span className={styles.standardsSubtitle}>Our Valuation Process</span>
+          <h2 className={styles.standardsTitle} style={{ textAlign: "center", margin: "15px 0 0 0" }}>
+            From Request to Reliable Report
+          </h2>
+          <div style={{ width: "80px", height: "2.5px", backgroundColor: "var(--accent-gold)", margin: "20px auto 0 auto" }}></div>
+        </div>
+
+        <div className={styles.processContainer}>
+          {/* SVG Connector Line */}
+          <svg className={styles.processSvgConnector} viewBox="0 0 1200 470" fill="none" stroke="var(--accent-gold)" strokeWidth="2">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3abeF9" />
+              </marker>
+            </defs>
+
+            {/* Row 1 Connectors */}
+            <path d="M 175 87.5 L 215.6 87.5" markerEnd="url(#arrow)" />
+            <path d="M 215.6 87.5 L 256.25 87.5" />
+
+            <path d="M 431.25 87.5 L 471.9 87.5" markerEnd="url(#arrow)" />
+            <path d="M 471.9 87.5 L 512.5 87.5" />
+
+            <path d="M 687.5 87.5 L 728.1 87.5" markerEnd="url(#arrow)" />
+            <path d="M 728.1 87.5 L 768.75 87.5" />
+
+            <path d="M 943.75 87.5 L 984.4 87.5" markerEnd="url(#arrow)" />
+            <path d="M 984.4 87.5 L 1025 87.5" />
+
+            {/* S-Curve Loop Connector */}
+            <path d="M 1200 87.5 L 1215 87.5 C 1255 87.5, 1255 235, 1215 235 L -15 235 C -55 235, -55 382.5, -15 382.5 L 0 382.5" />
+
+            {/* Row 2 Connectors */}
+            <path d="M 175 382.5 L 215.6 382.5" markerEnd="url(#arrow)" />
+            <path d="M 215.6 382.5 L 256.25 382.5" />
+
+            <path d="M 431.25 382.5 L 471.9 382.5" markerEnd="url(#arrow)" />
+            <path d="M 471.9 382.5 L 512.5 382.5" />
+
+            <path d="M 687.5 382.5 L 728.1 382.5" markerEnd="url(#arrow)" />
+            <path d="M 728.1 382.5 L 768.75 382.5" />
+
+            <path d="M 943.75 382.5 L 984.4 382.5" markerEnd="url(#arrow)" />
+            <path d="M 984.4 382.5 L 1025 382.5" />
+          </svg>
+
+          {/* Row 1: Steps 01 to 05 */}
+          <div className={styles.processRow}>
+            {VALUATION_PROCESS_DATA.slice(0, 5).map((step, idx) => (
+              <div key={idx} className={`${styles.processCard} scroll-reveal`} style={{ transitionDelay: `${idx * 80}ms` }}>
+                <div className={styles.stepBadge}>{step.step}</div>
+                <div className={styles.processIconWrapper}>
+                  {renderProcessIcon(step.icon)}
+                </div>
+                <h3 className={styles.processStepTitle}>{step.title}</h3>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2: Steps 06 to 10 */}
+          <div className={styles.processRow}>
+            {VALUATION_PROCESS_DATA.slice(5, 10).map((step, idx) => (
+              <div key={idx} className={`${styles.processCard} scroll-reveal`} style={{ transitionDelay: `${(idx + 5) * 80}ms` }}>
+                <div className={styles.stepBadge}>{step.step}</div>
+                <div className={styles.processIconWrapper}>
+                  {renderProcessIcon(step.icon)}
+                </div>
+                <h3 className={styles.processStepTitle}>{step.title}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>

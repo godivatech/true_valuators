@@ -334,3 +334,22 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsCard[] = [
 
 export const OUR_COMMITMENT = "Delivering accurate, reliable, and professional property valuation services with integrity, expertise, and timely execution.";
 
+export interface ProcessStep {
+  step: string;
+  title: string;
+  icon: string;
+}
+
+export const VALUATION_PROCESS_DATA: ProcessStep[] = [
+  { step: "01", title: "Client Request", icon: "user" },
+  { step: "02", title: "Acceptance of Assignment", icon: "handshake" },
+  { step: "03", title: "Collection of Documents", icon: "folder" },
+  { step: "04", title: "Property Inspection", icon: "inspection" },
+  { step: "05", title: "Market Survey & Data Collection", icon: "chart" },
+  { step: "06", title: "Legal & Technical Verification", icon: "shield-check" },
+  { step: "07", title: "Selection of Valuation Method", icon: "scale" },
+  { step: "08", title: "Valuation Analysis & Calculations", icon: "calculator" },
+  { step: "09", title: "Preparation of Valuation Report", icon: "document" },
+  { step: "10", title: "Review, Certification & Submission", icon: "award" }
+];
+
