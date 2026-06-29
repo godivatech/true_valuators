@@ -68,7 +68,7 @@ export default function Header() {
           );
         })}
         <a 
-          href="https://truewavesgroup.com" 
+          href="https://true-waves-vision.vercel.app/" 
           target="_blank" 
           rel="noopener noreferrer" 
           className={styles.partnerLink}
