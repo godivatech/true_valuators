@@ -178,9 +178,9 @@ export const TEAM_DATA: TeamMember[] = [
     name: "Chiranjeevi JS",
     role: "Chartered Engineer & Asset Consultant/ Approved Government Registered Valuer",
     credentials: [
-      "B.E (CIVIL), M.B.A, A.M.I.E, C.ENG, LIV",
+      "B.E (CIVIL), M.B.A, A.M.I.E, C.ENG, IOV",
       "Chartered Engineer (India) Registration",
-      "Member of the Institution of Valuers (LIV)",
+      "Member of the Institution of Valuers (IOV)",
       "Structural Engineering Specialist & Asset Consultant"
     ],
     image: "/images/leaders/chiranjeevi.png"
